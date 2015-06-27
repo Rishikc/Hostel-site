@@ -17,3 +17,10 @@ Route::get('/', function () {
 });
 Route::get('index', 'HomeController@index');
 
+
+Route::get('Hostel', 'HostelController@index');
+Route::get('Hostels/Zircon-A', 'HostelController@Zircon_A');
+Route::get('Hostels/Zircon-B', 'HostelController@Zircon_B');
+Route::get('Hostels/Zircon-C', 'HostelController@Zircon_C');
+
+

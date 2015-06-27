@@ -22,8 +22,8 @@ class HomeController extends Controller
         //return view('tables');
         //return view('charts');
         //return view('forms');
-        //return view('index1');
-        return view('home');
+        return view('index');
+        //return view('home');
     }
 
     /**
