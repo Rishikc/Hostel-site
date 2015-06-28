@@ -27,76 +27,53 @@ class HostelController extends Controller
 
     public function Zircon_A()
     {
-        return view('Hostels.Zircon-A');
+        return view('Hostels.Zircon-A.home');
     }
+
+    public function Zircon_A_council()
+    {
+        return view('Hostels.Zircon-A.council');
+    }
+
+    public function Zircon_A_gallery()
+    {
+        return view('Hostels.Zircon-A.gallery');
+    }
+
+    
 
     public function Zircon_B()
     {
-        return view('Hostels.Zircon-B');
+        return view('Hostels.Zircon-B.home');
     }
+
+    public function Zircon_B_council()
+    {
+        return view('Hostels.Zircon-B.council');
+    }
+
+    public function Zircon_B_gallery()
+    {
+        return view('Hostels.Zircon-B.gallery');
+    }
+
+
+
    
     public function Zircon_C()
     {
-        return view('Hostels.Zircon-C');
+        return view('Hostels.Zircon-C.home');
     }
 
-
-   public function create()
+    public function Zircon_C_council()
     {
-        //
+        return view('Hostels.Zircon-C.council');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @return Response
-     */
-    public function store()
+    public function Zircon_C_gallery()
     {
-        //
+        return view('Hostels.Zircon-C.gallery');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function show($id)
-    {
-        //
-    }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function update($id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }

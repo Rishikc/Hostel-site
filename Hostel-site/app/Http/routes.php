@@ -19,8 +19,17 @@ Route::get('index', 'HomeController@index');
 
 
 Route::get('hostels', 'HostelController@index');
-Route::get('hostels/Zircon-A', 'HostelController@Zircon_A');
-Route::get('hostels/Zircon-B', 'HostelController@Zircon_B');
-Route::get('hostels/Zircon-C', 'HostelController@Zircon_C');
 
+Route::get('hostels/zircon-a', 'HostelController@Zircon_A');
+Route::get('hostels/zircon-a/council', 'HostelController@Zircon_A_council');
+Route::get('hostels/zircon-a/gallery', 'HostelController@Zircon_A_gallery');
+
+
+Route::get('hostels/zircon-b', 'HostelController@Zircon_B');
+Route::get('hostels/zircon-b/council', 'HostelController@Zircon_B_council');
+Route::get('hostels/zircon-b/gallery', 'HostelController@Zircon_B_gallery');
+
+Route::get('hostels/zircon-c', 'HostelController@Zircon_C');
+Route::get('hostels/zircon-c/council', 'HostelController@Zircon_C_council');
+Route::get('hostels/zircon-c/gallery', 'HostelController@Zircon_C_gallery');
 
