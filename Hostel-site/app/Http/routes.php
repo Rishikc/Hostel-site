@@ -12,15 +12,15 @@
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('base');
 
 });
 Route::get('index', 'HomeController@index');
 
 
-Route::get('Hostel', 'HostelController@index');
-Route::get('Hostels/Zircon-A', 'HostelController@Zircon_A');
-Route::get('Hostels/Zircon-B', 'HostelController@Zircon_B');
-Route::get('Hostels/Zircon-C', 'HostelController@Zircon_C');
+Route::get('hostels', 'HostelController@index');
+Route::get('hostels/Zircon-A', 'HostelController@Zircon_A');
+Route::get('hostels/Zircon-B', 'HostelController@Zircon_B');
+Route::get('hostels/Zircon-C', 'HostelController@Zircon_C');
 
 
