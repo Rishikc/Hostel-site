@@ -1,0 +1,35 @@
+<?php
+
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class CreateHostels extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+       Schema::create('hostels', function(Blueprint $table)
+        {
+            $table->string('id',100)->unique()->primary();
+            $table->string('name',40);
+            $table->string('description',500);
+            $table->string('tags',100);
+            $table->string('image_url',100);
+            
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::drop('hostels');
+    }
+}
