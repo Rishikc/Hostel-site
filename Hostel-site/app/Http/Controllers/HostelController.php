@@ -16,7 +16,7 @@ class HostelController extends Controller
      */
     public function index()
     {
-        return view('Hostels');
+        return view('overview');
     }
 
     /**

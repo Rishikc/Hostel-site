@@ -1,31 +1,20 @@
-@extends('base')
-
-@section('title')
-    Hostels
-@stop
+@extends('hostels')
 
 @section('sidebar')
 <br>
+<li class="active">
+    <a href="#">Overview</a>
+</li>
 <li>
-    <a href="/index"> Home</a>
+    <a href="/hostels/zircon-a"> Zircon A</a>
 </li>
 <li >
-    <a href="/about">About</a>
-</li>
-<li class="active">
-    <a href="/hostels">Hostels</a>
+    <a href="/hostels/zircon-b">Zircon B</a>
 </li>
 <li>
-    <a href="/messes">Messes</a>
+    <a href="/hostels/zircon-c">Zircon C</a>
 </li>
-<li>
-    <a href="/complaints">Complaints</a>
-</li>
-<li>
-    <a href="/contacts" >Contacts</a>
-</li>
-<li>
-  @stop
+@stop
 
 @section('content')
 

@@ -24,9 +24,9 @@
     <div id="wrapper">
 
         <!-- Navigation -->
-        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <!-- <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation"> -->
             <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
+      <!--       <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
@@ -34,9 +34,9 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="index.html">SB Admin</a>
-            </div>
+            </div> -->
             <!-- Top Menu Items -->
-            <ul class="nav navbar-right top-nav">
+          <!--   <ul class="nav navbar-right top-nav">
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> <b class="caret"></b></a>
                     <ul class="dropdown-menu message-dropdown">
@@ -92,17 +92,43 @@
                         </li>
                     </ul>
                 </li>
-            </ul>
+            </ul> -->
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
-            <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <!-- <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     @yield('sidebar')
 
                     
                 </ul>
-            </div>
+            </div> -->
             <!-- /.navbar-collapse -->
-        </nav>
+       <!--  </nav> -->
+
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Hostel Office</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+                @yield('topbar')
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+      <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav side-nav">
+                    @yield('sidebar')
+
+                    
+                </ul>
+            </div> 
+    </nav>
 
         <div id="page-wrapper">
 
