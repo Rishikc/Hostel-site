@@ -1,4 +1,4 @@
-     @extends('base')
+@extends('hostels')
 
 @section('title')
     Hostels

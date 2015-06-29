@@ -1,4 +1,4 @@
-@extends('base')
+@extends('hostels')
 
 
 @section('sidebar')
@@ -22,7 +22,7 @@
     <a href="/contacts" >Contacts</a>
 </li>
 <li>
-  @stop
+@stop
 
 
 @section('content')
