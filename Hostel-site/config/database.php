@@ -54,10 +54,14 @@ return [
 
         'mysql' => [
             'driver'    => 'mysql',
-            'host'      => env('DB_HOST', 'localhost'),
-            'database'  => env('DB_DATABASE', 'hostel_site'),
-            'username'  => env('DB_USERNAME', 'root'),
-            'password'  => env('DB_PASSWORD', ''),
+            'host'      => 'localhost',
+            'database'  => 'hostel_site',
+            'username'  => 'root',
+            'password'  =>  'kousiksatish',
+            // 'host'      => env('DB_HOST', 'localhost'),
+            // 'database'  => env('DB_DATABASE', 'hostel_site'),
+            // 'username'  => env('DB_USERNAME', 'root'),
+            // 'password'  => env('DB_PASSWORD', 'kousiksatish'),
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix'    => '',

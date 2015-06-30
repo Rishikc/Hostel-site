@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+use App\Hostels as Hostels;
 class HostelController extends Controller
 {
     /**
@@ -25,6 +26,11 @@ class HostelController extends Controller
      * @return Response
      */
 
+    public function hostelhome($hostel_name)
+    {
+        $hostel = Hostels::where('name', '=', $hostel_name)->first();
+        return view('Hostels.home', ['details' => $hostel]);
+    }
     public function Zircon_A()
     {
         return view('Hostels.Zircon-A.home');

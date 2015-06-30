@@ -1,7 +1,6 @@
 @extends('hostels')
 
 @section('sidebar')
-<br>
 <li class="active">
     <a href="#">Overview</a>
 </li>
@@ -18,22 +17,20 @@
 
 @section('content')
 
-<div id="page-wrapper">
 
-            <div class="container-fluid">
 
                 <!-- Page Heading -->
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h1 class="page-header">
-                           Hostels
-                            <small>Overview</small>
-                        </h1>
-                        
-                    </div>
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">
+           Hostels
+            <small>Overview</small>
+        </h1>
+        
+    </div>
 
-                </div>
-            </div>
+</div>
+
 
 
 
