@@ -16,8 +16,8 @@ class HostelController extends Controller
      * @return Response
      */
     public function index()
-    {
-        return view('overview');
+    {   $hostels = Hostels::lists('name');
+        return view('overview',compact('hostels'));
     }
 
     /**

@@ -31,103 +31,20 @@
 
 </div>
 
-
-
-
 <div class="row">
-     <div class="col-xs-6 col-md-4">
-        <div class="panel panel-default">
-            <div class="panel-body"><a href="/hostels/zircon-a"><img class="img-responsive" src="/ZB.jpg" alt=""  ></a></div>
-            <div class="panel-footer clearfix"><center>Zircon-A</center></div>
-        </div>
-     </div>
+    
+@foreach ($hostels as $hostel)
 
-     <div class="col-xs-6 col-md-4">
-        <div class="panel panel-default">
-            <div class="panel-body"><a href="/hostels/zircon-b"><img class="img-responsive" src="/ZB.jpg" alt=""  ></a></div>
-            <div class="panel-footer clearfix"><center>Zircon-B</center></div>
-        </div>
-     </div>
+		 <div class="col-xs-6 col-md-4">
+    	    <div class="panel panel-default">
+        	    <div class="panel-body"><a href="/hostels/{{ $hostel }}"><img class="img-responsive" src="/Hostels/{{ $hostel }}.jpg" alt=""  ></a></div>
+        	    <div class="panel-footer clearfix"><center>{{ $hostel }}</center></div>
+        	</div>
+     	</div>
+    @endforeach 
 
-     <div class="col-xs-6 col-md-4">
-        <div class="panel panel-default">
-            <div class="panel-body"><a href="/hostels/zircon-c"><img class="img-responsive" src="/ZB.jpg" alt=""  ></a></div>
-            <div class="panel-footer clearfix"><center>Zircon-C</center></div>
-        </div>
-     </div>
 </div>
-<!-- /.row -->
-
-<div class="row">
-     <div class="col-xs-6 col-md-4">
-        <div class="panel panel-default">
-            <div class="panel-body"><a href="/hostels/zircon-a"><img class="img-responsive" src="/ZB.jpg" alt=""  ></a></div>
-            <div class="panel-footer clearfix"><center>Zircon-A</center></div>
-        </div>
-     </div>
-
-     <div class="col-xs-6 col-md-4">
-        <div class="panel panel-default">
-            <div class="panel-body"><a href="/hostels/zircon-b"><img class="img-responsive" src="/ZB.jpg" alt=""  ></a></div>
-            <div class="panel-footer clearfix"><center>Zircon-B</center></div>
-        </div>
-     </div>
-
-     <div class="col-xs-6 col-md-4">
-        <div class="panel panel-default">
-            <div class="panel-body"><a href="/hostels/zircon-c"><img class="img-responsive" src="/ZB.jpg" alt=""  ></a></div>
-            <div class="panel-footer clearfix"><center>Zircon-C</center></div>
-        </div>
-     </div>
-</div>
-<!-- /.row -->
-
-<div class="row">
-     <div class="col-xs-6 col-md-4">
-        <div class="panel panel-default">
-            <div class="panel-body"><a href="/hostels/zircon-a"><img class="img-responsive" src="/ZB.jpg" alt=""  ></a></div>
-            <div class="panel-footer clearfix"><center>Zircon-A</center></div>
-        </div>
-     </div>
-
-     <div class="col-xs-6 col-md-4">
-        <div class="panel panel-default">
-            <div class="panel-body"><a href="/hostels/zircon-b"><img class="img-responsive" src="/ZB.jpg" alt=""  ></a></div>
-            <div class="panel-footer clearfix"><center>Zircon-B</center></div>
-        </div>
-     </div>
-
-     <div class="col-xs-6 col-md-4">
-        <div class="panel panel-default">
-            <div class="panel-body"><a href="/hostels/zircon-c"><img class="img-responsive" src="/ZB.jpg" alt=""  ></a></div>
-            <div class="panel-footer clearfix"><center>Zircon-C</center></div>
-        </div>
-     </div>
-</div>
-<!-- /.row -->
-
-<div class="row">
-     <div class="col-xs-6 col-md-4">
-        <div class="panel panel-default">
-            <div class="panel-body"><a href="/hostels/zircon-a"><img class="img-responsive" src="/ZB.jpg" alt=""  ></a></div>
-            <div class="panel-footer clearfix"><center>Zircon-A</center></div>
-        </div>
-     </div>
-
-     <div class="col-xs-6 col-md-4">
-        <div class="panel panel-default">
-            <div class="panel-body"><a href="/hostels/zircon-b"><img class="img-responsive" src="/ZB.jpg" alt=""  ></a></div>
-            <div class="panel-footer clearfix"><center>Zircon-B</center></div>
-        </div>
-     </div>
-
-     <div class="col-xs-6 col-md-4">
-        <div class="panel panel-default">
-            <div class="panel-body"><a href="/hostels/zircon-c"><img class="img-responsive" src="/ZB.jpg" alt=""  ></a></div>
-            <div class="panel-footer clearfix"><center>Zircon-C</center></div>
-        </div>
-     </div>
-</div>
+   
 <!-- /.row -->
 
 @stop
