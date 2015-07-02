@@ -16,12 +16,18 @@ Route::get('/', function () {
 
 });
 Route::get('index', 'HomeController@index');
+Route::get('login', 'HomeController@login');
+Route::get('logout', 'HomeController@logout');
+Route::post('auth', 'HomeController@auth');
 
-
+/*Route::group(['middleware' => 'adminauth'], function () {
+//any pages oly visible by admin
+});
+*/
 Route::get('hostels', 'HostelController@index');
-
-
 Route::get('hostels/{hostel_name}', 'HostelController@hostelhome');
+Route::get('hostels/{hostel_name}/edit', 'HostelController@hosteledit');
+
 // Route::get('hostels/zircon-a', 'HostelController@Zircon_A');
 // Route::get('hostels/zircon-a/council', 'HostelController@Zircon_A_council');
 // Route::get('hostels/zircon-a/gallery', 'HostelController@Zircon_A_gallery');

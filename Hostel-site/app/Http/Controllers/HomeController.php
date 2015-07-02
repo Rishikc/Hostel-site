@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\Session;
 
 class HomeController extends Controller
 {
@@ -31,9 +32,52 @@ class HomeController extends Controller
      *
      * @return Response
      */
-    public function create()
+    public function login()
     {
-        //
+        return view('login');
+    }
+
+     public function auth(Request $request)
+    {
+            $username=explode("@",$request->get('email')); 
+            $username = $username[0];
+            $password=$request->get('password');
+            /*$url="{vayu.nitt.edu:993/imap/ssl/novalidate-cert}";
+            $imap=@imap_open($url,$username,$password);
+            if($imap == true)
+            {
+                Session::put('user_name',$username);
+                Session::put('user_handle',$username);
+                Session::put('user_type','faculty');
+                return Redirect::to('user/home');
+            }
+            else
+            {
+                return Redirect::to('login')->with('message', 'Incorrect Username or Password');
+            }*/
+            if($username == 'admin' and $password == 'delta')
+               { Session::put('user_name',$username);
+                 return Redirect::to('hostels ')   ;
+                }
+    }
+
+    public function logout()
+    {
+        if(Session::get('user_type','guest')=='faculty')
+        {
+            Session::flush();        
+            return Redirect::to('login')->with('message', 'Successfully Logged out.');
+        }
+        else if(Session::get('user_type','guest')=='admin')
+        {
+            Session::flush();        
+            return Redirect::to('admin/login')->with('message', 'Successfully Logged out.');
+        }
+        else
+        {
+            Session::flush();
+            return Redirect::to('/');
+        }   
     }
 
     /**

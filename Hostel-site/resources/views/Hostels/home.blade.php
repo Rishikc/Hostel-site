@@ -46,6 +46,7 @@
 </p>
 </div>
 </div>
-
-
+<a href="/hostels/{{ $details->name }}/edit"><button type="button" class="btn btn-danger">edit</button></a>
+<?php //{{ if(Session::get('user_handle')) echo 'welcome admin' }}
+?>
 @stop

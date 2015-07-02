@@ -31,6 +31,14 @@ class HostelController extends Controller
         $hostel = Hostels::where('name', '=', $hostel_name)->first();
         return view('Hostels.home', ['details' => $hostel]);
     }
+    
+    public function hosteledit($hostel_name)
+    {
+        $hostel = Hostels::where('name', '=', $hostel_name)->first();
+        return view('Hostels.edit', ['details' => $hostel]);
+    }
+
+
     public function Zircon_A()
     {
         return view('Hostels.Zircon-A.home');
