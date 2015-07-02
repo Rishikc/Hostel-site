@@ -4,6 +4,7 @@ namespace Illuminate\Foundation\Auth;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cache;
 
 trait AuthenticatesUsers
 {
@@ -16,6 +17,10 @@ trait AuthenticatesUsers
      */
     public function getLogin()
     {
+        if (view()->exists('auth.authenticate')) {
+            return view('auth.authenticate');
+        }
+
         return view('auth.login');
     }
 
@@ -28,19 +33,33 @@ trait AuthenticatesUsers
     public function postLogin(Request $request)
     {
         $this->validate($request, [
-            'email' => 'required|email', 'password' => 'required',
+            $this->loginUsername() => 'required', 'password' => 'required',
         ]);
 
-        $credentials = $this->getCredentials($request);
+        $throttles = in_array(
+            ThrottlesLogins::class, class_uses_recursive(get_class($this))
+        );
 
-        if (Auth::attempt($credentials, $request->has('remember'))) {
+        if ($throttles && $this->hasTooManyLoginAttempts($request)) {
+            return $this->sendLockoutResponse($request);
+        }
+
+        if (Auth::attempt($this->getCredentials($request), $request->has('remember'))) {
+            if ($throttles) {
+                $this->clearLoginAttempts($request);
+            }
+
             return redirect()->intended($this->redirectPath());
         }
 
+        if ($throttles) {
+            $this->incrementLoginAttempts($request);
+        }
+
         return redirect($this->loginPath())
-            ->withInput($request->only('email', 'remember'))
+            ->withInput($request->only($this->loginUsername(), 'remember'))
             ->withErrors([
-                'email' => $this->getFailedLoginMessage(),
+                $this->loginUsername() => $this->getFailedLoginMessage(),
             ]);
     }
 
@@ -52,7 +71,7 @@ trait AuthenticatesUsers
      */
     protected function getCredentials(Request $request)
     {
-        return $request->only('email', 'password');
+        return $request->only($this->loginUsername(), 'password');
     }
 
     /**
@@ -85,5 +104,15 @@ trait AuthenticatesUsers
     public function loginPath()
     {
         return property_exists($this, 'loginPath') ? $this->loginPath : '/auth/login';
+    }
+
+    /**
+     * Get the login username to be used by the controller.
+     *
+     * @return string
+     */
+    public function loginUsername()
+    {
+        return property_exists($this, 'username') ? $this->username : 'email';
     }
 }

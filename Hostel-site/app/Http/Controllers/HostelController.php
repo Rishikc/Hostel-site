@@ -37,6 +37,23 @@ class HostelController extends Controller
         $hostel = Hostels::where('name', '=', $hostel_name)->first();
         return view('Hostels.edit', ['details' => $hostel]);
     }
+    
+    public function hostelupdate(Request $request,$hostel_name)
+    {   
+        $hostel_desc=$request->get('description');
+        $hostel_tags=$request->get('tags');
+    
+         $save = Hostels::where('name',$hostel_name)->update(array(
+            'description'   => $hostel_desc,
+            'tags'  => $hostel_tags
+            ));
+
+        if($save)
+            return 'Profile updated successfully';
+        else
+            return 'Profile could not be updated';
+
+    }
 
 
     public function Zircon_A()

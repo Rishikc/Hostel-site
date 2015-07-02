@@ -19,6 +19,7 @@ class CreateHostels extends Migration
             $table->string('description',500);
             $table->string('tags',100);
             $table->string('image_url',100);
+            $table->timestamp('updated_at',100);
             
         });
     }

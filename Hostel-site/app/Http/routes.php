@@ -27,6 +27,7 @@ Route::post('auth', 'HomeController@auth');
 Route::get('hostels', 'HostelController@index');
 Route::get('hostels/{hostel_name}', 'HostelController@hostelhome');
 Route::get('hostels/{hostel_name}/edit', 'HostelController@hosteledit');
+Route::post('hostels/{hostel_name}/update', 'HostelController@hostelupdate');
 
 // Route::get('hostels/zircon-a', 'HostelController@Zircon_A');
 // Route::get('hostels/zircon-a/council', 'HostelController@Zircon_A_council');

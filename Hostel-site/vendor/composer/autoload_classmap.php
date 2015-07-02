@@ -6,8 +6,10 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
-    'CreateUsersTable' => $baseDir . '/database/migrations/2014_10_12_000000_create_users_table.php',
+    'CreateHostelIncharge' => $baseDir . '/database/migrations/2015_06_29_194503_create_hostel_incharge.php',
+    'CreateHostels' => $baseDir . '/database/migrations/2015_06_29_194436_create_hostels.php',
+    'CreateMessIncharge' => $baseDir . '/database/migrations/2015_06_29_203527_create_mess_incharge.php',
+    'CreateMesses' => $baseDir . '/database/migrations/2015_06_29_203517_create_messes.php',
     'DatabaseSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',
     'File_Iterator' => $vendorDir . '/phpunit/php-file-iterator/src/Iterator.php',
     'File_Iterator_Facade' => $vendorDir . '/phpunit/php-file-iterator/src/Facade.php',
