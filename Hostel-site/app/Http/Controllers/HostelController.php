@@ -43,7 +43,7 @@ class HostelController extends Controller
         $hostel_desc=$request->get('description');
         $hostel_tags=$request->get('tags');
     
-         $save = Hostels::where('name',$hostel_name)->update(array(
+         $save = Hostels::where('name','=',$hostel_name)->update(array(
             'description'   => $hostel_desc,
             'tags'  => $hostel_tags
             ));

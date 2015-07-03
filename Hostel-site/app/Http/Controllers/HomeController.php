@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Redirect;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Http\Controllers\Session;
+
 
 class HomeController extends Controller
 {
@@ -56,28 +57,23 @@ class HomeController extends Controller
                 return Redirect::to('login')->with('message', 'Incorrect Username or Password');
             }*/
             if($username == 'admin' and $password == 'delta')
-               { Session::put('user_name',$username);
+               { 
+                 Session::put('user_name',$username);
                  return Redirect::to('hostels ')   ;
+                }
+                else
+                {
+                 return Redirect::to('login ')->with('message', 'Invalid username and password.')   ;
+                   
                 }
     }
 
     public function logout()
     {
-        if(Session::get('user_type','guest')=='faculty')
-        {
-            Session::flush();        
-            return Redirect::to('login')->with('message', 'Successfully Logged out.');
-        }
-        else if(Session::get('user_type','guest')=='admin')
-        {
-            Session::flush();        
-            return Redirect::to('admin/login')->with('message', 'Successfully Logged out.');
-        }
-        else
-        {
+       
             Session::flush();
-            return Redirect::to('/');
-        }   
+            return Redirect::to('/login')->with('message', 'Successfully Logged out.');
+           
     }
 
     /**

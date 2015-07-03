@@ -23,5 +23,11 @@
 <li>
     <a href="/contacts" >Contacts</a>
 </li>
+@if (Session::has('user_name'))
+	<li>
+    <a href="/logout" >Logout</a>
+</li>
 
+
+@endif
 @stop
