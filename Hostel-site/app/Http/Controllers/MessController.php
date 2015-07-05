@@ -33,6 +33,21 @@ class MessController extends Controller
         return view('mess.edit', ['details' => $mess]);
     }
 
+    public function messupdate(Request $request,$mess_name)
+    {
+        $mess_desc=$request->get('description');
+        $mess_tags=$request->get('tags');
+    
+         $save = Mess::where('url_name','=',$mess_name)->update(array(
+            'description'   => $mess_desc,
+            'tags'  => $mess_tags
+            ));
+
+        if($save)
+            return 'Profile updated successfully';
+        else
+            return 'Profile could not be updated';
+    }
     /**
      * Show the form for creating a new resource.
      *
