@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateHostels extends Migration
+class CreateHostelIncharge extends Migration
 {
     /**
      * Run the migrations.
@@ -12,14 +12,15 @@ class CreateHostels extends Migration
      */
     public function up()
     {
-       Schema::create('hostels', function(Blueprint $table)
+        
+        Schema::create('hostel_incharge', function(Blueprint $table)
         {
-            $table->increments('id',100)->unique()->primary();
+            $table->increments('id',100);
             $table->string('name',40);
-            $table->string('description',500);
-            $table->string('tags',100);
+            $table->string('hostel_id',100)->foreign();
+            $table->string('position',100);
+            $table->string('mail',100);
             $table->string('image_url',100);
-            $table->timestamp('updated_at',100);
             
         });
     }
@@ -31,6 +32,6 @@ class CreateHostels extends Migration
      */
     public function down()
     {
-        Schema::drop('hostels');
+        Schema::drop('hostel_incharge');
     }
 }

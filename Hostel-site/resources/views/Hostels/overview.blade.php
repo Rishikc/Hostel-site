@@ -4,15 +4,12 @@
 <li class="active">
     <a href="#">Overview</a>
 </li>
-<li>
-    <a href="/hostels/zircon-a"> Zircon A</a>
-</li>
+@foreach ($hostels as $hostel)
 <li >
-    <a href="/hostels/zircon-b">Zircon B</a>
+    <a href="/hostels/{{ $hostel }}"> {{ $hostel }}</a>
 </li>
-<li>
-    <a href="/hostels/zircon-c">Zircon C</a>
-</li>
+@endforeach 
+
 @stop
 
 @section('content')

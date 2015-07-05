@@ -2,17 +2,11 @@
 
 @section('sidebar')
 <li>
-    <a href="/hostels">Overview</a>
+    <a href="/mess">Overview</a>
 </li>
 <li>
 
-    <a href="/hostels/zircon-a"> Zircon A</a>
-</li>
-<li >
-    <a href="/hostels/zircon-b">Zircon B</a>
-</li>
-<li>
-    <a href="/hostels/zircon-c">Zircon C</a>
+    <a href="/mess/o-mess"> O-mess</a>
 </li>
 @stop
 
@@ -48,7 +42,7 @@
 </div>
 
 @if (Session::has('user_name'))
-<a href="/hostels/{{ $details->name }}/edit"><button type="button" class="btn btn-danger">edit</button></a>
+<a href="/mess/{{ $details->name }}/edit"><button type="button" class="btn btn-danger">edit</button></a>
 @endif
 
 @stop

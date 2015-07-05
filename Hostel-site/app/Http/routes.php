@@ -29,6 +29,10 @@ Route::get('hostels/{hostel_name}', 'HostelController@hostelhome');
 Route::get('hostels/{hostel_name}/edit', 'HostelController@hosteledit');
 Route::post('hostels/{hostel_name}/update', 'HostelController@hostelupdate');
 
+Route::get('mess', 'MessController@index');
+Route::get('mess/{mess_name}', 'MessController@messhome');
+Route::get('mess/{mess_name}/edit', 'MessController@messedit');
+
 // Route::get('hostels/zircon-a', 'HostelController@Zircon_A');
 // Route::get('hostels/zircon-a/council', 'HostelController@Zircon_A_council');
 // Route::get('hostels/zircon-a/gallery', 'HostelController@Zircon_A_gallery');
