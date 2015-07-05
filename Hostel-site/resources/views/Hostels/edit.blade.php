@@ -17,7 +17,7 @@
 @stop
 
 @section('content')
-<form class="form-horizontal" method="POST" action="/hostels/ {{ $details->name }}/update">
+<form class="form-horizontal" method="POST" action="/hostels/{{$details->url_name}}/update">
       <input type="hidden" name="_token" value="{{ csrf_token() }}">
 <div class="row">
     <div class="col-lg-4">
