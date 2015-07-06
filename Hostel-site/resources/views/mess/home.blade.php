@@ -7,6 +7,7 @@
 <li>
 
     <a href="/mess/o-mess"> O-mess</a>
+    <a href="/mess/A-mess"> A-mess</a>
 </li>
 @stop
 
