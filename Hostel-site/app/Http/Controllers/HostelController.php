@@ -29,13 +29,13 @@ class HostelController extends Controller
 
     public function hostelhome($hostel_name)
     {
-        $hostel = Hostels::where('name', '=', $hostel_name)->first();
+        $hostel = Hostels::where('url_name', '=', $hostel_name)->first();
         return view('Hostels.home', ['details' => $hostel]);
     }
     
     public function hosteledit($hostel_name)
     {
-        $hostel = Hostels::where('name', '=', $hostel_name)->first();
+        $hostel = Hostels::where('url_name', '=', $hostel_name)->first();
         return view('Hostels.edit', ['details' => $hostel]);
     }
     
@@ -44,7 +44,7 @@ class HostelController extends Controller
         $hostel_desc=$request->get('description');
         $hostel_tags=$request->get('tags');
     
-         $save = Hostels::where('name','=',$hostel_name)->update(array(
+         $save = Hostels::where('url_name','=',$hostel_name)->update(array(
             'description'   => $hostel_desc,
             'tags'  => $hostel_tags
             ));

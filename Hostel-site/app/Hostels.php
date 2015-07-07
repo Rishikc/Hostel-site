@@ -8,5 +8,5 @@ class Hostels extends Model
 {
     //
     protected $table = "hostels";
-    
+    public $timestamps = false;
 }
