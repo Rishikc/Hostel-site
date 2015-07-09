@@ -28,6 +28,8 @@ Route::get('hostels', 'HostelController@index');
 Route::get('hostels/{hostel_name}', 'HostelController@hostelhome');
 Route::get('hostels/{hostel_name}/edit', 'HostelController@hosteledit');
 Route::post('hostels/{hostel_name}/update', 'HostelController@hostelupdate');
+Route::get('hostels/{hostel_name}/gallery', 'HostelController@hostelgallery');
+
 
 Route::get('mess', 'MessController@index');
 Route::get('mess/{mess_name}', 'MessController@messhome');

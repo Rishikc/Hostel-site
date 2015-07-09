@@ -43,7 +43,7 @@
 </div>
 
 @if (Session::has('user_name'))
-<a href="/mess/{{ $details->name }}/edit"><button type="button" class="btn btn-danger">edit</button></a>
+<a href="/mess/{{ $details->url_name }}/edit"><button type="button" class="btn btn-danger">edit</button></a>
 @endif
 
 @stop

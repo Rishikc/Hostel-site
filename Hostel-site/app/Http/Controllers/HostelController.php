@@ -33,6 +33,12 @@ class HostelController extends Controller
         return view('Hostels.home', ['details' => $hostel]);
     }
     
+    public function hostelgallery($hostel_name)
+    {
+        $hostel = Hostels::where('url_name', '=', $hostel_name)->first();
+        return view('Hostels.gallery', ['details' => $hostel]);   
+    }
+    
     public function hosteledit($hostel_name)
     {
         $hostel = Hostels::where('url_name', '=', $hostel_name)->first();

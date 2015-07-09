@@ -15,7 +15,7 @@
     <a href="/hostels">Hostels</a>
 </li>
 <li>
-    <a href="/messes">Messes</a>
+    <a href="/mess">Messes</a>
 </li>
 <li>
     <a href="/complaints">Complaints</a>
