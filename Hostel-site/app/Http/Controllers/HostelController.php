@@ -16,7 +16,7 @@ class HostelController extends Controller
      * @return Response
      */
     public function index()
-    {   $hostels = Hostels::lists('url_name');
+    {   $hostels = Hostels::all();
         
         return view('Hostels.overview',compact('hostels'));
     }
@@ -30,7 +30,8 @@ class HostelController extends Controller
     public function hostelhome($hostel_name)
     {
         $hostel = Hostels::where('url_name', '=', $hostel_name)->first();
-        return view('Hostels.home', ['details' => $hostel]);
+        $hostels = Hostels::all();
+        return view('Hostels.home', ['details' => $hostel, 'hostels' => $hostels, 'selected_hostel' => $hostel_name]);
     }
     
     public function hostelgallery($hostel_name)

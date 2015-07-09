@@ -1,4 +1,4 @@
-@extends('hostels')
+@extends('mess')
 
 @section('sidebar')
 <li>

@@ -5,8 +5,9 @@
     <a href="#">Overview</a>
 </li>
 @foreach ($hostels as $hostel)
-<li >
-    <a href="/hostels/{{ $hostel }}"> {{ $hostel }}</a>
+<li>
+
+    <a href="/hostels/{{ $hostel->url_name }}"> {{ $hostel->name }}</a>
 </li>
 @endforeach 
 
@@ -34,8 +35,8 @@
 
 		 <div class="col-xs-6 col-md-4">
     	    <div class="panel panel-default">
-        	    <div class="panel-body"><a href="/hostels/{{ $hostel }}"><img class="img-responsive" src="/Hostels/{{ $hostel }}.jpg" alt=""  ></a></div>
-        	    <div class="panel-footer clearfix"><center>{{ $hostel }}</center></div>
+        	    <div class="panel-body"><a href="/hostels/{{ $hostel->url_name }}"><img class="img-responsive" src="/Hostels/{{ $hostel }}.jpg" alt=""  ></a></div>
+        	    <div class="panel-footer clearfix"><center>{{ $hostel->name }}</center></div>
         	</div>
      	</div>
     @endforeach 

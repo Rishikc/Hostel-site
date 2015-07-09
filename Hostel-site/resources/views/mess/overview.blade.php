@@ -1,4 +1,4 @@
-@extends('hostels')
+@extends('mess')
 
 @section('sidebar')
 <li class="active">
@@ -6,7 +6,7 @@
 </li>
 @foreach ($messes as $mess)
 <li >
-    <a href="/mess/{{ $mess }}"> {{ $mess }}</a>
+    <a href="/mess/{{ $mess->url_name}}"> {{ $mess->name }}</a>
 </li>
 @endforeach 
 
@@ -34,8 +34,8 @@
 
 		 <div class="col-xs-6 col-md-4">
     	    <div class="panel panel-default">
-        	    <div class="panel-body"><a href="/mess/{{ $mess }}"><img class="img-responsive" src="/Mess/{{ $mess }}.jpg" alt=""  ></a></div>
-        	    <div class="panel-footer clearfix"><center>{{ $mess }}</center></div>
+        	    <div class="panel-body"><a href="/mess/{{ $mess->url_name }}"><img class="img-responsive" src="/Mess/{{ $mess }}.jpg" alt=""  ></a></div>
+        	    <div class="panel-footer clearfix"><center>{{ $mess->name }}</center></div>
         	</div>
      	</div>
     @endforeach 

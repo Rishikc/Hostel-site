@@ -17,14 +17,15 @@ class MessController extends Controller
      * @return Response
      */
     public function index()
-    {   $messes=Mess::lists('url_name');
+    {   $messes=Mess::all();
         return view('mess.overview',compact('messes'));
     }
 
     public function messhome($mess_name)
     {
         $mess = Mess::where('url_name', '=', $mess_name)->first();
-        return view('mess.home', ['details' => $mess]);
+        $messes = Mess::all();
+        return view('mess.home', ['details' => $mess, 'messes' => $messes, 'selected_mess' => $mess_name]);
     }
     
     public function messedit($mess_name)

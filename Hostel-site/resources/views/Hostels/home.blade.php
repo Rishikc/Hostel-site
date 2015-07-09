@@ -4,16 +4,16 @@
 <li>
     <a href="/hostels">Overview</a>
 </li>
-<li>
-
-    <a href="/hostels/zircon-a"> Zircon A</a>
+@foreach ($hostels as $hostel)
+<li
+<?php
+    if($hostel->url_name == $selected_hostel)
+        echo 'class="active"'
+?>
+>
+    <a href="/hostels/{{ $hostel->url_name }}"> {{ $hostel->name }}</a>
 </li>
-<li >
-    <a href="/hostels/zircon-b">Zircon B</a>
-</li>
-<li>
-    <a href="/hostels/zircon-c">Zircon C</a>
-</li>
+@endforeach 
 @stop
 
 @section('content')

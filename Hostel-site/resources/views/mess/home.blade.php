@@ -1,14 +1,19 @@
-@extends('hostels')
+@extends('mess')
 
 @section('sidebar')
 <li>
     <a href="/mess">Overview</a>
 </li>
-<li>
-
-    <a href="/mess/o-mess"> O-mess</a>
-    <a href="/mess/A-mess"> A-mess</a>
+@foreach ($messes as $mess)
+<li
+<?php
+    if($mess->url_name == $selected_mess)
+        echo 'class="active"'
+?>
+>
+    <a href="/mess/{{ $mess->url_name }}"> {{ $mess->name }}</a>
 </li>
+@endforeach 
 @stop
 
 @section('content')
