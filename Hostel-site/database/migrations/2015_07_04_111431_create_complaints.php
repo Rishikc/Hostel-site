@@ -12,7 +12,18 @@ class CreateComplaints extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('complaints', function(Blueprint $table)
+        {
+            $table->increments('id',100);
+            $table->string('hostel',40);
+            $table->string('subject',40);
+            $table->string('description',500);
+            $table->string('created_name',40);
+            $table->string('created_rollnumber',40);
+//            $table->timestamp('created_at',100);
+            
+        });
+ 
     }
 
     /**
@@ -22,6 +33,6 @@ class CreateComplaints extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('messes');
     }
 }

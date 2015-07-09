@@ -29,6 +29,8 @@ Route::get('hostels/{hostel_name}', 'HostelController@hostelhome');
 Route::get('hostels/{hostel_name}/edit', 'HostelController@hosteledit');
 Route::post('hostels/{hostel_name}/update', 'HostelController@hostelupdate');
 Route::get('hostels/{hostel_name}/gallery', 'HostelController@hostelgallery');
+Route::get('hostels/{hostel_name}/complaint', 'HostelController@hostelcomplaint');
+Route::post('hostels/{hostel_name}/complaint/submit', 'HostelController@hostelcomplaint_submit');
 
 
 Route::get('mess', 'MessController@index');
