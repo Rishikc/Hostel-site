@@ -42,6 +42,7 @@ class HostelController extends Controller
         return view('Hostels.gallery', ['details' => $hostel]);   
     }
     
+   
     public function hostelcomplaint($hostel_name)
     {
         $hostel = Hostels::where('url_name', '=', $hostel_name)->first();
@@ -62,6 +63,8 @@ class HostelController extends Controller
             return 'complaint could not be recorded';
         //return view('Hostels.complaint', ['details' => $hostel]);   
     }
+
+   
 
     public function hosteledit($hostel_name)
     {
