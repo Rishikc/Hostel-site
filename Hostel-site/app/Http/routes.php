@@ -25,6 +25,8 @@ Route::post('auth', 'HomeController@auth');
 });
 */
 Route::get('hostels', 'HostelController@index');
+Route::get('hostels/create', 'HostelController@create');
+Route::post('hostels/create', 'HostelController@store');
 Route::get('hostels/{hostel_name}', 'HostelController@hostelhome');
 Route::get('hostels/{hostel_name}/edit', 'HostelController@hosteledit');
 Route::post('hostels/{hostel_name}/update', 'HostelController@hostelupdate');

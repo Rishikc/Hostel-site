@@ -21,6 +21,22 @@ class HostelController extends Controller
         return view('Hostels.overview',compact('hostels'));
     }
 
+    public function create()
+    {
+        $hostels = Hostels::all();
+        return View('Hostels.create',compact('hostels'));
+    }
+
+    public function store(Request $request)
+    {
+        $hostel = new Hostels;
+        $hostel->name = $request->get('name');
+        $hostel->description = $request->get('description');
+        $hostel->url_name = $request->get('url_name');
+        $hostel->tags = $request->get('tags');
+        $hostel->save();
+        return redirect('hostels/create')->with('message', 'Successfully created Hostel!!');
+    }
     /**
      * Show the form for creating a new resource.
      *
