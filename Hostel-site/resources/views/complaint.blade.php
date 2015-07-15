@@ -21,8 +21,8 @@
 <div class="row">
     <div class="col-lg-12">
         <h1 class="page-header">
-           {{$details->name}}
-            <small>Complaint form</small>
+           Complaint form
+            
         </h1>
         
     </div>
@@ -41,7 +41,7 @@ blah blah blah blah blah.
 <br>
 <div class="row">
 <div class="col-lg-12">
-<form class="form-horizontal" method="POST" action="/hostels/{{$details->url_name}}/complaint/submit">
+<form class="form-horizontal" method="POST" action="/complaint/submit">
    <input type="hidden" name="_token" value="{{ csrf_token() }}">
   <div class="form-group">
     <label class="control-label col-sm-2" for="name"><center>Name</center></label>
@@ -51,21 +51,47 @@ blah blah blah blah blah.
   </div>
 
   <div class="form-group">
-    <label class="control-label col-sm-2" for="pwd"><center>Rollnumber</center></label>
+    <label class="control-label col-sm-2" for="roll"><center>Rollnumber</center></label>
     <div class="col-sm-6">
       <input type="number" class="form-control" id="roll" name="roll" placeholder="Enter rollnumber">
     </div>
   </div>
 
 <div class="form-group">
-    <label class="control-label col-sm-2" for="name"><center>Complaint subject</center></label>
+    <label class="control-label col-sm-2" for="name"><center>Name</center></label>
+    <div class="col-sm-6">
+        <div class="radio">
+            <label><input type="radio" name="option" value="hostel">Hostel</label>
+            <label><input type="radio" name="option" value="mess">Mess</label>
+            <label><input type="radio" name="option" value="other">other</label>
+        </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="hostel_name"><center>Hostel/Mess Name</center></label>
+    <div class="col-sm-6">
+      <select class="form-control" id="hostel_name" name="hostel_name">
+    @foreach ($hostels as $hostel)
+      <option value="{{ $hostel->name }}">{{ $hostel->name }}</option>
+    @endforeach 
+    @foreach ($mess as $mess)
+      <option value="{{ $mess->name }}">{{ $mess->name }}</option>
+    @endforeach 
+  </select>
+    </div>
+  </div>
+    
+
+<div class="form-group">
+    <label class="control-label col-sm-2" for="subject"><center>Complaint subject</center></label>
     <div class="col-sm-6">
       <input type="text" class="form-control" id="subject" name="subject" placeholder="Enter subject">
     </div>
   </div>
 
   <div class="form-group">
-    <label class="control-label col-sm-2" for="pwd"><center>Complaint details</center></label>
+    <label class="control-label col-sm-2" for="complaint"><center>Complaint details</center></label>
     <div class="col-sm-6">
       <input type="textarea" class="form-control" id="details" name="details" placeholder="Enter details">
     </div>

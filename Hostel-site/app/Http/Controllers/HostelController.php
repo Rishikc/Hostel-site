@@ -59,28 +59,6 @@ class HostelController extends Controller
     }
     
    
-    public function hostelcomplaint($hostel_name)
-    {
-        $hostel = Hostels::where('url_name', '=', $hostel_name)->first();
-        return view('Hostels.complaint', ['details' => $hostel]);   
-    }
-    public function hostelcomplaint_submit(Request $request,$hostel_name)
-    {
-        $name =$request->get('name');
-        $rollnumber=$request->get('roll');
-        $subject=$request->get('subject');
-        $details=$request->get('details');
-
-        $complaint = Complaints::insert(['hostel' => $hostel_name,'subject' => $subject,'description' => $details,'created_name' => $name,'created_rollnumber' => $rollnumber]);
-        
-        if($complaint)
-            return 'complaint recored successfully';
-        else
-            return 'complaint could not be recorded';
-        //return view('Hostels.complaint', ['details' => $hostel]);   
-    }
-
-   
 
     public function hosteledit($hostel_name)
     {

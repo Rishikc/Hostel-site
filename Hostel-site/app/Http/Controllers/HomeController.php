@@ -8,6 +8,10 @@ use Illuminate\Support\Facades\Redirect;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+use App\Hostels as Hostels;
+use App\Mess as Mess;
+use App\complaints as Complaints;
+
 
 class HomeController extends Controller
 {
@@ -75,6 +79,31 @@ class HomeController extends Controller
             return Redirect::to('/login')->with('message', 'Successfully Logged out.');
            
     }
+
+    public function complaint()
+    {
+        $hostel = Hostels::all();
+        $mess= Mess::all();
+        return view('complaint', ['hostels' => $hostel,'mess' => $mess]);   
+    }
+    public function complaint_submit(Request $request)
+    {
+        $name =$request->get('name');
+        $building=$request->get('option');
+        $rollnumber=$request->get('roll');
+        $subject=$request->get('subject');
+        $details=$request->get('details');
+        $hostel_name=$request->get('hostel_name');
+
+        $complaint = Complaints::insert(['building' => $building,'hostel' => $hostel_name,'subject' => $subject,'description' => $details,'created_name' => $name,'created_rollnumber' => $rollnumber]);
+        
+        if($complaint)
+            return 'complaint recored successfully';
+        else
+            return 'complaint could not be recorded';
+        //return view('Hostels.complaint', ['details' => $hostel]);   
+    }
+
 
     /**
      * Store a newly created resource in storage.

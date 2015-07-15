@@ -15,6 +15,7 @@ class CreateComplaints extends Migration
         Schema::create('complaints', function(Blueprint $table)
         {
             $table->increments('id',100);
+            $table->string('building',40);
             $table->string('hostel',40);
             $table->string('subject',40);
             $table->string('description',500);
@@ -23,7 +24,6 @@ class CreateComplaints extends Migration
 //            $table->timestamp('created_at',100);
             
         });
- 
     }
 
     /**
@@ -33,6 +33,6 @@ class CreateComplaints extends Migration
      */
     public function down()
     {
-        Schema::drop('messes');
+        Schema::drop('complaints');
     }
 }
