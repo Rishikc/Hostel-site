@@ -28,6 +28,7 @@ Route::post('auth', 'HomeController@auth');
 Route::resource('h_incharge', 'H_InchargeController');
 
 Route::get('hostels', 'HostelController@index');
+Route::get('hostels/show', 'HostelController@show');
 Route::get('hostels/create', 'HostelController@create');
 Route::post('hostels/create', 'HostelController@store');
 Route::get('hostels/{hostel_name}', 'HostelController@hostelhome');

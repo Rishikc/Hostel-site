@@ -23,6 +23,11 @@ class HostelController extends Controller
         return view('Hostels.overview',compact('hostels'));
     }
 
+    public function show()
+    {
+        $hostels = Hostels::all();
+        return view('Hostels.index', compact('hostels'));
+    }
     public function create()
     {
         $hostels = Hostels::all();
