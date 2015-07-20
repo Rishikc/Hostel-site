@@ -22,7 +22,8 @@ class H_InchargeController extends Controller
     public function index()
     {
         //
-        return view('H_Incharge.index');
+        $hi = H_Incharge::details();
+        return view('H_Incharge.index', compact('hi'));
 
     }
 

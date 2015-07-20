@@ -35,5 +35,33 @@
 	</div>
 </div>
 
+<div class="row">
+	<div class="col-lg-12">
+		<table class="table table-bordered table-hover  table-striped">
+			<tr>
+				<th>#</th>
+				<th>Name</th>
+				<th>Hostel Name</th>
+				<th>Position</th>
+				<th>Operations</th>
+			</tr>
+			<?php $i=1;?>
+			@foreach($hi as $h)
+				<tr>
+					<td>{{$i}}</td>
+					<td>{{$h->name}}</td>
+					<td>{{$h->hname}}</td>
+					<td>{{$h->position}}</td>
+					<td></td>
+
+				</tr>
+				<?php $i++;?>
+			@endforeach
+		</table>
+
+
+	</div>
+</div>
+
 
 @stop
