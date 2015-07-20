@@ -22,6 +22,7 @@ class H_InchargeController extends Controller
     public function index()
     {
         //
+        return view('H_Incharge.index');
 
     }
 

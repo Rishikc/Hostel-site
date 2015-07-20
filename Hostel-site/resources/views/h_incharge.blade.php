@@ -11,7 +11,7 @@
 <li >
     <a href="/about">About</a>
 </li>
-<li class="active">
+<li>
     <a href="/hostels">Hostels</a>
 </li>
 <li>
@@ -23,8 +23,8 @@
 <li>
     <a href="/contacts">Contacts</a>
 </li>
-<li>
-<a href="/hincharge">Hostels Incharge</a>
+<li class="active">
+<a href="/h_incharge">Hostels Incharge</a>
 </li>
 @if (Session::has('user_name'))
 	<li>

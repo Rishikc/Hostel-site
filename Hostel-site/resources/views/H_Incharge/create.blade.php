@@ -1,13 +1,15 @@
 @extends('h_incharge')
 
 @section('sidebar')
-<li class="active">
-Create
-</li>
 
 <li>
-Show all
+<a href="/h_incharge">Show all</a>
 </li>
+
+<li class="active">
+<a href="/h_incharge/screate">Create</a>
+</li>
+
 @stop
 
 @section('content')
