@@ -6,10 +6,12 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'CreateHostelIncharge' => $baseDir . '/database/migrations/2015_06_29_194503_create_hostel_incharge.php',
-    'CreateHostels' => $baseDir . '/database/migrations/2015_06_29_194436_create_hostels.php',
-    'CreateMessIncharge' => $baseDir . '/database/migrations/2015_06_29_203527_create_mess_incharge.php',
-    'CreateMesses' => $baseDir . '/database/migrations/2015_06_29_203517_create_messes.php',
+    'ComplaintSeeder' => $baseDir . '/database/seeds/ComplaintSeeder.php',
+    'CreateComplaints' => $baseDir . '/database/migrations/2015_07_15_052312_create_complaints.php',
+    'CreateHostelIncharge' => $baseDir . '/database/migrations/2015_07_04_111404_create_hostel_incharge.php',
+    'CreateHostels' => $baseDir . '/database/migrations/2015_07_04_111356_create_hostels.php',
+    'CreateMess' => $baseDir . '/database/migrations/2015_07_04_111414_create_mess.php',
+    'CreateMessIncharge' => $baseDir . '/database/migrations/2015_07_04_111420_create_mess_incharge.php',
     'DatabaseSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',
     'File_Iterator' => $vendorDir . '/phpunit/php-file-iterator/src/Iterator.php',
     'File_Iterator_Facade' => $vendorDir . '/phpunit/php-file-iterator/src/Facade.php',

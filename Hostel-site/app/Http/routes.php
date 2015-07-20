@@ -24,6 +24,9 @@ Route::post('auth', 'HomeController@auth');
 //any pages oly visible by admin
 });
 */
+
+Route::resource('h_incharge', 'H_InchargeController');
+
 Route::get('hostels', 'HostelController@index');
 Route::get('hostels/create', 'HostelController@create');
 Route::post('hostels/create', 'HostelController@store');
