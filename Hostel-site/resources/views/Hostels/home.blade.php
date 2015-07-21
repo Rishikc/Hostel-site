@@ -47,6 +47,25 @@
 </div>
 </div>
 
+<div class="row">
+<div class="col-lg-12">
+<h3>Incharge</h3>
+<p>
+<div class="row">
+
+@foreach($incharge as $hi)
+    <div class="col-md-4">
+    {{$hi->name}}
+    {{$hi->position}}
+    </div>
+@endforeach
+</div>
+</p>
+
+</div>
+</div>
+
+
 @if (Session::has('user_name'))
 <a href="/hostels/{{ $details->name }}/edit"><button type="button" class="btn btn-danger">edit</button></a>
 @endif

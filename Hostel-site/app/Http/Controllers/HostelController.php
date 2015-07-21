@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\Hostels as Hostels;
+use App\H_Incharge as H_Incharge;
 use App\complaints as Complaints;
 
 class HostelController extends Controller
@@ -53,8 +54,9 @@ class HostelController extends Controller
     public function hostelhome($hostel_name)
     {
         $hostel = Hostels::where('url_name', '=', $hostel_name)->first();
+        $hi = H_Incharge::where('hostel_id', '=', $hostel->id)->get();
         $hostels = Hostels::all();
-        return view('Hostels.home', ['details' => $hostel, 'hostels' => $hostels, 'selected_hostel' => $hostel_name]);
+        return view('Hostels.home', ['details' => $hostel, 'hostels' => $hostels, 'selected_hostel' => $hostel_name, 'incharge' => $hi]);
     }
     
     public function hostelgallery($hostel_name)
@@ -103,7 +105,7 @@ class HostelController extends Controller
     {
         return view('Hostels.Zircon-A.gallery');
     }
-
+    
     
 
     public function Zircon_B()
