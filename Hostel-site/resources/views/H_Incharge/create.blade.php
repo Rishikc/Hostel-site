@@ -39,22 +39,23 @@
 {!! Form::open(array("url"=>"/h_incharge"))!!}
 
 	<label>Name of Incharge</label>
-	<input type="text" name="name">
+	<input type="text" name="name" required>
 	<br>
 	<label>Hostel</label>
-	<select name="hostel_id">
+	<select name="hostel_id" required>
 	@foreach ($hostels as $hostel)
 		<option value="{{$hostel->id}}">{{$hostel->name}}</option>
 	@endforeach
 	</select>
 	<br>
 	<label>Position</label>
-	<input type="text" name="position">
+	<input type="text" name="position" required>
 	<br>
 	<label>Description</label>
-	<textarea rows="3" name="description"></textarea>
+	<textarea rows="3" name="description" required></textarea>
 	<br>
 	<label>Image</label>
+	<input type="file" name="image" id="image" required>
 	<br>
 
 	<input type="submit" name="submit">
