@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+
 use App\Hostels as Hostels;
 use App\H_Incharge as H_Incharge;
 use App\complaints as Complaints;
@@ -42,6 +43,15 @@ class HostelController extends Controller
         $hostel->description = $request->get('description');
         $hostel->url_name = $request->get('url_name');
         $hostel->tags = $request->get('tags');
+
+        
+        //$request->file('image')->getClientOriginalExtension();
+        $destinationPath = base_path() . '/public/Hostels/'; // upload path
+        $extension = $request->file('image')->getClientOriginalExtension(); // getting image extension
+        $fileName = $hostel->url_name .'.'.$extension; // renameing image
+        $request->file('image')->move($destinationPath, $fileName); 
+
+
         $hostel->save();
         return redirect('hostels/create')->with('message', 'Successfully created Hostel!!');
     }
