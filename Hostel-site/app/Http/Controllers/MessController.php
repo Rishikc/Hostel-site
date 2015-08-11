@@ -21,6 +21,32 @@ class MessController extends Controller
         return view('mess.overview',compact('messes'));
     }
 
+    public function create()
+    {
+        $messes = Mess::all();
+        return View('mess.create',compact('messes'));
+    }
+
+    public function store(Request $request)
+    {
+        $mess = new Mess;
+        $mess->name = $request->get('name');
+        $mess->description = $request->get('description');
+        $mess->url_name = $request->get('url_name');
+        $mess->tags = $request->get('tags');
+
+        
+        //$request->file('image')->getClientOriginalExtension();
+        $destinationPath = base_path() . '/public/Mess/'; // upload path
+        $extension = $request->file('image')->getClientOriginalExtension(); // getting image extension
+        $fileName = $mess->url_name .'.'.$extension; // renameing image
+        $request->file('image')->move($destinationPath, $fileName); 
+
+
+        $mess->save();
+        return redirect('mess/create')->with('message', 'Mess was Successfully Added!!');
+    }
+
     public function messhome($mess_name)
     {
         $mess = Mess::where('url_name', '=', $mess_name)->first();
@@ -49,35 +75,11 @@ class MessController extends Controller
         else
             return 'Profile could not be updated';
     }
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return Response
-     */
-    public function create()
+  
+    public function show()
     {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @return Response
-     */
-    public function store()
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function show($id)
-    {
-        //
+        $messes = Mess::all();
+        return view('mess.index', compact('messes'));
     }
 
     /**

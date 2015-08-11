@@ -36,8 +36,12 @@ Route::get('hostels/{hostel_name}/edit', 'HostelController@hosteledit');
 Route::post('hostels/{hostel_name}/update', 'HostelController@hostelupdate');
 Route::get('hostels/{hostel_name}/gallery', 'HostelController@hostelgallery');
 
+Route::resource('m_incharge', 'M_InchargeController');
 
 Route::get('mess', 'MessController@index');
+Route::get('mess/show', 'MessController@show');
+Route::get('mess/create', 'MessController@create');
+Route::post('mess/create', 'MessController@store');
 Route::get('mess/{mess_name}', 'MessController@messhome');
 Route::get('mess/{mess_name}/edit', 'MessController@messedit');
 Route::post('mess/{mess_name}/update', 'MessController@messupdate');
