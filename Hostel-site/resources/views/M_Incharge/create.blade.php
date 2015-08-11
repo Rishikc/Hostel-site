@@ -36,7 +36,7 @@
 </div>
 <div class="row">
 <div class="col-lg-12">
-{!! Form::open(array("url"=>"/m_incharge","class"=>"form-horizontal"))!!}
+{!! Form::open(array("url"=>"/m_incharge","class"=>"form-horizontal",'files' => true))!!}
 
 	<div class="form-group">
     	<label class="control-label col-sm-2" for="name"><center>Name of Incharge</center></label>
@@ -64,12 +64,19 @@
     </div>
     <br>
     <div class="form-group">
-    	<label class="control-label col-sm-2" for="description"><center>Description</center></label>
-   		<div class="col-sm-6">
-   		   	<textarea rows="3" class="form-control" id="description" name="description" placeholder="Desription" required></textarea> 
-    	</div>
+        <label class="control-label col-sm-2" for="mail"><center>E-Mail</center></label>
+        <div class="col-sm-6">
+            <input type="email" class="form-control" id="mail" name="mail" placeholder="Enter E-mail" required>
+        </div>
     </div>
 	<br>
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="image_url"><center>Image Url</center></label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" id="image_url" name="image_url" placeholder="Enter Image Url" required>
+        </div>
+    </div>
+    <br>
 	<div class="form-group">
     	<label class="control-label col-sm-2" for="image"><center>Image</center></label>
     	<div class="col-sm-6">

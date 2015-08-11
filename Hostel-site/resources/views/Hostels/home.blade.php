@@ -52,12 +52,13 @@
 <h3>Incharge</h3>
 <p>
 <div class="row">
-
 @foreach($incharge as $hi)
-    <div class="col-md-4">
-    {{$hi->name}}
-    {{$hi->position}}
-    </div>
+    <div class="col-xs-6 col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-body"><img class="img-responsive" src="/Hostel Incharge/{{ $hi->image_url }}.jpg" alt=""  ></div>
+                <div class="panel-footer clearfix"><center>{{ $hi->name }}</center><center>{{$hi->position}}</center></div>
+            </div>
+        </div>
 @endforeach
 </div>
 </p>

@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\Mess as Mess;
+use App\M_Incharge as M_Incharge;
 
 class MessController extends Controller
 {
@@ -50,8 +51,9 @@ class MessController extends Controller
     public function messhome($mess_name)
     {
         $mess = Mess::where('url_name', '=', $mess_name)->first();
+        $mi = M_Incharge::where('mess_id', '=', $mess["id"])->get();
         $messes = Mess::all();
-        return view('mess.home', ['details' => $mess, 'messes' => $messes, 'selected_mess' => $mess_name]);
+        return view('mess.home', ['details' => $mess, 'messes' => $messes, 'selected_mess' => $mess_name, 'incharge' => $mi]);
     }
     
     public function messedit($mess_name)

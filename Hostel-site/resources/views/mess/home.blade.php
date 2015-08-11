@@ -47,6 +47,25 @@
 </div>
 </div>
 
+<div class="row">
+<div class="col-lg-12">
+<h3>Incharge</h3>
+<p>
+<div class="row">
+@foreach($incharge as $mi)
+    <div class="col-xs-6 col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-body"><img class="img-responsive" src="/Mess Incharge/{{ $mi->image_url }}.jpg" alt=""  ></div>
+                <div class="panel-footer clearfix"><center>{{ $mi->name }}</center><center>{{$mi->position}}</center></div>
+            </div>
+        </div>
+@endforeach
+</div>
+</p>
+
+</div>
+</div>
+
 @if (Session::has('user_name'))
 <a href="/mess/{{ $details->url_name }}/edit"><button type="button" class="btn btn-danger">edit</button></a>
 @endif

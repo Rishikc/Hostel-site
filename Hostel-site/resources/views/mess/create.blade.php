@@ -2,7 +2,7 @@
 
 @section('sidebar')
 <li>
-    <a href="#">Overview</a>
+    <a href="../mess">Overview</a>
 </li>
 @foreach ($messes as $mess)
 <li>

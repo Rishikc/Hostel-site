@@ -2,7 +2,7 @@
 
 @section('sidebar')
 <li>
-    <a href="#">Overview</a>
+    <a href="../hostels">Overview</a>
 </li>
 @foreach ($hostels as $hostel)
 <li>
@@ -42,25 +42,49 @@
 </div>
 <div class="row">
 <div class="col-lg-12">
-<form method="post" action="/hostels/create" enctype="multipart/form-data">
+<form method="post" class="form-horizontal" action="/hostels/create" enctype="multipart/form-data">
 <input type="hidden" name="_token" value="{{ csrf_token() }}">
-	<label>Name of Hostel</label>
-	<input type="text" name="name" required/>
-	<br>
-	<label>Url of hostel</label>
-	<input type="text" name="url_name" required/>
-	<br>
-	<label>Description</label>
-	<textarea rows="3" name="description" required></textarea>
-	<br>
-	<label>Tags</label>
-	<input type="text" name="tags" required>
-	<br>
-	<label>Image</label>
-	<input type="file" name="image" id="image" required>
-	<br>
-
-	<input type="submit" name="submit">
+	<div class="form-group">
+    			<label class="control-label col-sm-2" for="name"><center>Name of Hostel</center></label>
+    			<div class="col-sm-6">
+      				<input type="text" class="form-control" id="name" name="name" placeholder="Enter name" required>
+    			</div>
+    		</div>
+			<br>
+			<div class="form-group">
+    			<label class="control-label col-sm-2" for="url-name"><center>URL of Hostel</center></label>
+    			<div class="col-sm-6">
+      				<input type="text" class="form-control" id="url_name" name="url_name" placeholder="Enter URL" required>
+    			</div>
+    		</div>
+			<br>
+			<div class="form-group">
+    			<label class="control-label col-sm-2" for="description"><center>Description</center></label>
+    			<div class="col-sm-6">
+      				<textarea rows="3" class="form-control" id="description" name="description" placeholder="Desription" required></textarea> 
+    			</div>
+    		</div>
+			<br>
+			<div class="form-group">
+    			<label class="control-label col-sm-2" for="tags"><center>Tags</center></label>
+    			<div class="col-sm-6">
+      				<input type="text" class="form-control" id="tags" name="tags" placeholder="Tags" required>
+    			</div>
+    		</div>
+			<br>
+			<div class="form-group">
+    			<label class="control-label col-sm-2" for="image"><center>Image</center></label>
+    			<div class="col-sm-6">
+      				<input type="file" name="image" id="image" required>
+    			</div>
+    		</div>
+			<br>
+			<div class="form-group">
+    			<div class="col-sm-2 col-sm-offset-3">
+      				<input class="btn btn-success form-control" type="submit" name="submit">	
+    			</div>
+    		</div>
+			<br>
 
 
 </form>

@@ -121,9 +121,10 @@ class HomeController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function show($id)
+    public function show($page = 1)
     {
-        //
+        $complaints = Complaints::take(10)->skip($page-1)->get();
+        return view('show', compact('complaints'));
     }
 
     /**

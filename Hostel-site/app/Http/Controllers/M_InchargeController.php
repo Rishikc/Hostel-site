@@ -51,7 +51,16 @@ class M_InchargeController extends Controller
         $mi->name = $request->get('name');
         $mi->mess_id = $request->get('mess_id');
         $mi->position = $request->get("position");
-        $mi->mail = $request->get('description');
+        $mi->mail = $request->get('mail');
+        $mi->image_url = $request->get('image_url');
+
+        //$request->file('image')->getClientOriginalExtension();
+        $destinationPath = base_path() . '/public/Mess Incharge/'; // upload path
+        $extension = $request->file('image')->getClientOriginalExtension(); // getting image extension
+        $fileName = $mi->image_url .'.'.$extension; // renameing image
+        $request->file('image')->move($destinationPath, $fileName); 
+
+
         $mi->save();
         return redirect('m_incharge/create')->with('message', 'Successfully created Mess Incharge!!');
 

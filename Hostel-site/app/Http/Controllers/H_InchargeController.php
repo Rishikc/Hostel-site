@@ -51,7 +51,15 @@ class H_InchargeController extends Controller
         $hi->name = $request->get('name');
         $hi->hostel_id = $request->get('hostel_id');
         $hi->position = $request->get("position");
-        $hi->mail = $request->get('description');
+        $hi->mail = $request->get('mail');
+        $hi->image_url = $request->get('image_url');
+
+        //$request->file('image')->getClientOriginalExtension();
+        $destinationPath = base_path() . '/public/Hostel Incharge/'; // upload path
+        $extension = $request->file('image')->getClientOriginalExtension(); // getting image extension
+        $fileName = $hi->image_url .'.'.$extension; // renameing image
+        $request->file('image')->move($destinationPath, $fileName); 
+
         $hi->save();
         return redirect('h_incharge/create')->with('message', 'Successfully created Hostel Incharge!!');
 

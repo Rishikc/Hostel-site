@@ -19,6 +19,7 @@ Route::get('index', 'HomeController@index');
 Route::get('login', 'HomeController@login');
 Route::get('logout', 'HomeController@logout');
 Route::post('auth', 'HomeController@auth');
+Route::get('admin/show/{page?}', 'HomeController@show');
 
 /*Route::group(['middleware' => 'adminauth'], function () {
 //any pages oly visible by admin
@@ -26,6 +27,7 @@ Route::post('auth', 'HomeController@auth');
 */
 
 Route::resource('h_incharge', 'H_InchargeController');
+
 
 Route::get('hostels', 'HostelController@index');
 Route::get('hostels/show', 'HostelController@show');
