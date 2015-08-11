@@ -121,9 +121,13 @@ class HomeController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function show($page = 1)
+    public function show()
     {
-        $complaints = Complaints::take(10)->skip($page-1)->get();
+        if(!Session::has('user_name'))
+        {
+            return redirect('login');
+        }
+        $complaints = Complaints::paginate(10);
         return view('show', compact('complaints'));
     }
 

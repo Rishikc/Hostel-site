@@ -13,7 +13,7 @@
 
     <link href="{{asset('/css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{asset('/css/sb-admin.css')}}" rel="stylesheet">
-
+    
     <!-- Custom Fonts -->
     <link href="{{asset('/font-awesome/css/font-awesome.min.css')}}font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
@@ -151,7 +151,7 @@
     <script src="{{asset('/js/jquery.js')}}"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="{{asset('/js/bootstrap.min.js')}}"script>
+    <script src="{{asset('/js/bootstrap.min.js')}}"></script>
 
 </body>
 

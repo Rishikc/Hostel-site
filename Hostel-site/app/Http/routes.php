@@ -19,8 +19,7 @@ Route::get('index', 'HomeController@index');
 Route::get('login', 'HomeController@login');
 Route::get('logout', 'HomeController@logout');
 Route::post('auth', 'HomeController@auth');
-Route::get('admin/show/{page?}', 'HomeController@show');
-
+Route::get('admin/show', 'HomeController@show');
 /*Route::group(['middleware' => 'adminauth'], function () {
 //any pages oly visible by admin
 });
