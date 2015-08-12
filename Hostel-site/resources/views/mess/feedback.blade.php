@@ -39,7 +39,7 @@
    				<label class="control-label col-sm-2" for="quality"><center>Quality</center></label>
     			<div class="col-sm-6">
       				<label class="radio-inline">
-      					<input type="radio" name="quality" value=1>Very Bad
+      					<input type="radio" name="quality" value=1 required>Very Bad
     				</label>
     				<label class="radio-inline">
       					<input type="radio" name="quality" value=2>Bad
@@ -59,7 +59,7 @@
    				<label class="control-label col-sm-2" for="quantity"><center>Quantity</center></label>
     			<div class="col-sm-6">
       				<label class="radio-inline">
-      					<input type="radio" name="quantity" value=1>Very Bad
+      					<input type="radio" name="quantity" value=1 required>Very Bad
     				</label>
     				<label class="radio-inline">
       					<input type="radio" name="quantity" value=2>Bad
@@ -79,7 +79,7 @@
    				<label class="control-label col-sm-2" for="punctuality"><center>Punctuality</center></label>
     			<div class="col-sm-6">
       				<label class="radio-inline">
-      					<input type="radio" name="punctuality" value=1>Very Bad
+      					<input type="radio" name="punctuality" value=1 required>Very Bad
     				</label>
     				<label class="radio-inline">
       					<input type="radio" name="punctuality" value=2>Bad
@@ -99,7 +99,7 @@
    				<label class="control-label col-sm-2" for="cleanliness"><center>Cleanliness</center></label>
     			<div class="col-sm-6">
       				<label class="radio-inline">
-      					<input type="radio" name="cleanliness" value=1>Very Bad
+      					<input type="radio" name="cleanliness" value=1 required>Very Bad
     				</label>
     				<label class="radio-inline">
       					<input type="radio" name="cleanliness" value=2>Bad
@@ -119,7 +119,7 @@
    				<label class="control-label col-sm-2" for="overall"><center>Overall</center></label>
     			<div class="col-sm-6">
       				<label class="radio-inline">
-      					<input type="radio" name="overall" value=1>Very Bad
+      					<input type="radio" name="overall" value=1 required>Very Bad
     				</label>
     				<label class="radio-inline">
       					<input type="radio" name="overall" value=2>Bad
