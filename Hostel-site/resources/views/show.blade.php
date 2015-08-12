@@ -1,7 +1,8 @@
 
 @extends('base')
-
-
+@section('title')
+Compliants
+@stop
 @section('content')
 
 @foreach($complaints as $complaint)

@@ -58,7 +58,7 @@ return [
             'database'  => 'hostel_site',
             'username'  => 'root',
             //'password'  =>  'kousiksatish',
-            'password'  =>  '9948241211',
+            'password'  =>  'blhaededmu',
             // 'host'      => env('DB_HOST', 'localhost'),
             // 'database'  => env('DB_DATABASE', 'hostel_site'),
             // 'username'  => env('DB_USERNAME', 'root'),

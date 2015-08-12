@@ -43,10 +43,11 @@ Route::get('mess', 'MessController@index');
 Route::get('mess/show', 'MessController@show');
 Route::get('mess/create', 'MessController@create');
 Route::post('mess/create', 'MessController@store');
+Route::get('mess/feedback','MessController@feedback');
+Route::post('mess/feedback','MessController@store_feedback');
 Route::get('mess/{mess_name}', 'MessController@messhome');
 Route::get('mess/{mess_name}/edit', 'MessController@messedit');
 Route::post('mess/{mess_name}/update', 'MessController@messupdate');
-
 
 Route::get('complaint', 'HomeController@complaint');
 Route::post('complaint/submit', 'HomeController@complaint_submit');

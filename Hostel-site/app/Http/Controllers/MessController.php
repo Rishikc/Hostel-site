@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Session;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -82,6 +82,32 @@ class MessController extends Controller
     {
         $messes = Mess::all();
         return view('mess.index', compact('messes'));
+    }
+
+    /**
+    *Show the form for receiving feedback
+    */
+    public function feedback()
+    {
+         if(!Session::has('roll_number'))
+        {
+            return redirect('login');
+        }
+        $messes = Mess::all();
+        return view('mess.feedback', compact('messes'));
+
+    }
+    /**
+    *Store the response in the database
+    */
+     public function store_feedback(Request $request)
+    {
+       echo $request['mess_name'];
+       echo $request['quality'];
+       echo $request['quantity'];
+       echo $request['punctuality'];
+       echo $request['cleanliness'];
+       echo $request['overall'];
     }
 
     /**
