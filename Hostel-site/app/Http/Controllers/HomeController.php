@@ -42,24 +42,22 @@ class HomeController extends Controller
         return view('login');
     }
 
-     public function auth(Request $request)
+   public function auth(Request $request)
     {
             $username=explode("@",$request->get('email')); 
             $username = $username[0];
             $password=$request->get('password');
-            /*$url="{vayu.nitt.edu:993/imap/ssl/novalidate-cert}";
+            $url="{vayu.nitt.edu:993/imap/ssl/novalidate-cert}";
             $imap=@imap_open($url,$username,$password);
             if($imap == true)
             {
-                Session::put('user_name',$username);
-                Session::put('user_handle',$username);
-                Session::put('user_type','faculty');
-                return Redirect::to('user/home');
+                Session::put('roll_number',$username);
+                return Redirect::to('/hostels');
             }
             else
             {
                 return Redirect::to('login')->with('message', 'Incorrect Username or Password');
-            }*/
+            }
             if($username == 'admin' and $password == 'delta')
                { 
                  Session::put('user_name',$username);
@@ -71,7 +69,6 @@ class HomeController extends Controller
                    
                 }
     }
-
     public function logout()
     {
        
