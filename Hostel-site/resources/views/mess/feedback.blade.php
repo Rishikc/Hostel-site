@@ -25,11 +25,11 @@
 		<form method="post" class="form-horizontal" action="/mess/feedback">
 			<input type="hidden" name="_token" value="{{ csrf_token() }}">
 			<div class="form-group">
-   				<label class="control-label col-sm-2" for="mess_name"><center>Mess Name</center></label>
+   				<label class="control-label col-sm-2" for="mess_id"><center>Mess Name</center></label>
     			<div class="col-sm-6">
-      				<select class="form-control" id="mess_name" name="mess_name">
+      				<select class="form-control" id="mess_id" name="mess_id">
 						@foreach ($messes as $mess)
-      						<option value="{{ $mess->name }}">{{ $mess->name }}</option>
+      						<option value="{{ $mess->id }}">{{ $mess->name }}</option>
     					@endforeach 
   					</select>
   				</div>

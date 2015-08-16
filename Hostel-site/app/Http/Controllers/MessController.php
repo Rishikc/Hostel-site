@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 
 use App\Mess as Mess;
 use App\M_Incharge as M_Incharge;
+use App\mess_feedback as mess_feedback;
 
 class MessController extends Controller
 {
@@ -43,8 +44,14 @@ class MessController extends Controller
         $fileName = $mess->url_name .'.'.$extension; // renameing image
         $request->file('image')->move($destinationPath, $fileName); 
 
-
         $mess->save();
+
+        //Add a new coloumn in mess_feedback table for the created mess
+        $mess_feedback = new mess_feedback;
+        $mess_feedback->mess_id = $mess->id;
+
+        $mess_feedback->save();
+
         return redirect('mess/create')->with('message', 'Mess was Successfully Added!!');
     }
 
@@ -89,7 +96,7 @@ class MessController extends Controller
     */
     public function feedback()
     {
-         if(!Session::has('roll_number'))
+        if(!Session::has('roll_number'))
         {
             return redirect('login');
         }
@@ -102,12 +109,30 @@ class MessController extends Controller
     */
      public function store_feedback(Request $request)
     {
-       echo $request['mess_name'];
-       echo $request['quality'];
-       echo $request['quantity'];
-       echo $request['punctuality'];
-       echo $request['cleanliness'];
-       echo $request['overall'];
+        $mess_feedback = mess_feedback::where('mess_id','=',$request['mess_id'])->first();
+        if(!$mess_feedback)
+            return redirect('/mess/feedback');
+        
+        //Retrieve data from old feedbacks
+        $quality = $mess_feedback->quality * $mess_feedback->number_of_feebacks + $request['quality'];
+        $quantity = $mess_feedback->quantity * $mess_feedback->number_of_feebacks + $request['quantity'];
+        $punctuality = $mess_feedback->punctuality * $mess_feedback->number_of_feebacks + $request['punctuality'];
+        $cleanliness = $mess_feedback->cleanliness * $mess_feedback->number_of_feebacks + $request['cleanliness'];
+        $overall = $mess_feedback->overall * $mess_feedback->number_of_feebacks + $request['overall'];
+
+        //Add the current feedback
+        $mess_feedback->number_of_feebacks+=1;
+
+        $mess_feedback->quality = $quality/$mess_feedback->number_of_feebacks;
+        $mess_feedback->quantity = $quantity/$mess_feedback->number_of_feebacks;
+        $mess_feedback->punctuality = $punctuality/$mess_feedback->number_of_feebacks;
+        $mess_feedback->cleanliness = $cleanliness/$mess_feedback->number_of_feebacks;
+        $mess_feedback->overall = $overall/$mess_feedback->number_of_feebacks;
+
+        //save the new data
+        $mess_feedback->save();
+        $messes = Mess::all();
+        return view('mess.feedback_response', compact('messes'));
     }
 
     /**
