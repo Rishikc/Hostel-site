@@ -1,45 +1,95 @@
-
 @extends('base')
 @section('title')
 Compliants
 @stop
+@section('topbar')
+ <li>
+    <a href="/index"> Home</a>
+</li>
+<li >
+    <a href="/about">About</a>
+</li>
+<li>
+    <a href="/hostels">Hostels</a>
+</li>
+<li>
+    <a href="/mess">Messes</a>
+</li>
+<li class="active">
+    <a href="/complaints">Complaints</a>
+</li>
+<li>
+    <a href="/contacts" >Contacts</a>
+</li>
+@if (Session::has('user_name')||Session::has('roll_number'))
+	<li>
+    	<a href="/logout" >Logout</a>
+	</li>
+@endif
+@stop
+
+@section('sidebar')
+<li>
+    <a href="/complaints">Make a Complaint</a>
+</li>
+<li class="active">
+    <a href="/admin/show">View Complaints</a>
+</li>
+@stop
 @section('content')
-
+<meta name="_token" content="{{ csrf_token() }}"/>
+<ul class="list-group">
+<li class="list-group-item active col-sm-12">
+	<div class="col-sm-2"><center><h4>Complainant</h4></center></div>
+	<div class="col-sm-8"><center><h4>Complaint Subject</h4></center></div>
+	<div class="col-sm-2"><center><h4>Status</center></h4></div>
+</li>
 @foreach($complaints as $complaint)
-<div class="panel panel-default">
-	<div class="panel-heading">
-		<div class="panel-title">
-			<b>Subject:  </b> {{ $complaint->subject }}
-		</div>
-	</div>
-	<div class="panel-body">
-		<b>Name of the student: </b>{{ $complaint->created_name }}<br/>
-		<b>Roll number: </b>{{ $complaint->created_rollnumber }}<br/>
-		<b>Building: </b>{{ $complaint->building }}<br/>
-		<b>Hostel: </b>{{ $complaint->hostel }}<br/>
-		<button class="btn btn-info" data-toggle="modal" data-target="#myModal">
-			View description
-		</button>
-		<div id="myModal"  class="modal fade" role="dialog">
-			 <div class="modal-dialog">
-			    <div class="modal-content">
-			      <div class="modal-header">
-			        <button type="button" class="close" data-dismiss="modal">&times;</button>
-			        <h4 class="modal-title">Description</h4>
-			      </div>
-			      <div class="modal-body">
-			        <p>{{ $complaint->description }}</p>
-			      </div>
-			      <div class="modal-footer">
-			        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-			      </div>
-			    </div>
-			  </div>
-		</div>
-	</div>
-</div>
+<li class="list-group-item col-sm-12 clickable" id="{{ $complaint->id }}">
+	<div class="col-sm-2"><center>{{$complaint->created_rollnumber}}</center></div>
+	<div class="col-sm-8"><center>{{$complaint->subject}}</center></div>
+	<div class="col-sm-2" id="complaint_status"><center>{{$complaint->status}}</center></div>
+</li>
 @endforeach
-
+</ul>
 {!! $complaints->render() !!}
-
+<div class="modal fade" id="complaintmodal" tabindex="-1" role="dialog" aria-labelledby="ComplaintModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="ComplaintModalLabel">Complaint Details</h4>
+      </div>
+      <div class="modal-body">
+   		<ul class="list-group">
+   			<li class="list-group-item col-sm-12" id="name"></li>
+   			<br><br>
+   			<li class="list-group-item col-sm-12" id="roll"></li>
+   			<br><br>
+   			<li class="list-group-item col-sm-12" id="hostel"></li>
+   			<br><br>
+   			<li class="list-group-item col-sm-12" id="subject"></li>
+   			<br><br>
+   			<li class="list-group-item col-sm-12" id="description"></li>
+   			<br><br>
+   			<li class="list-group-item col-sm-12" id="status"></li>
+   			<br><br>
+   		</ul>
+      </div>
+      <div class="modal-footer">
+      	@if (Session::has('user_name'))
+      		<button type="button" id="process" class="btn btn-warning">Add to Processing</button>
+      		<button type="button" id="done" class="btn btn-success">Add to Done</button>
+      	@endif
+        <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script>var base_url = "{{ url('/') }}";</script>
+<script src="{{asset('/js/jquery.js')}}"></script>
+<script src="{{ asset('js/complaint.js') }}"></script>
+@if (Session::has('user_name'))
+    <script src="{{ asset('js/modify_status.js') }}"></script>
+@endif
 @stop

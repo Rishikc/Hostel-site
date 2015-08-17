@@ -20,10 +20,14 @@ Route::get('login', 'HomeController@login');
 Route::get('logout', 'HomeController@logout');
 Route::post('auth', 'HomeController@auth');
 Route::get('admin/show', 'HomeController@show');
+Route::post('get_complaint','HomeController@get_complaint');
+Route::post('/modify_complaint_status','HomeController@modify_complaint_status');
 /*Route::group(['middleware' => 'adminauth'], function () {
 //any pages oly visible by admin
 });
 */
+
+Route::get('contacts','HomeController@contacts_info');
 
 Route::resource('h_incharge', 'H_InchargeController');
 

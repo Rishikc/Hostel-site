@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Validator;
 
 use App\Mess as Mess;
 use App\M_Incharge as M_Incharge;
@@ -96,10 +97,10 @@ class MessController extends Controller
     */
     public function feedback()
     {
-        if(!Session::has('roll_number'))
+       /** if(!Session::has('roll_number'))
         {
             return redirect('login');
-        }
+        }*/
         $messes = Mess::all();
         return view('mess.feedback', compact('messes'));
 
@@ -109,6 +110,19 @@ class MessController extends Controller
     */
      public function store_feedback(Request $request)
     {
+        //Validate form input
+        $validator = Validator::make($request->all(), [
+            'mess_id' => 'required|integer',
+            'quality' => 'required|integer|between:1,5',
+            'quantity' => 'required|integer|between:1,5',
+            'punctuality' => 'required|integer|between:1,5',
+            'cleanliness' => 'required|integer|between:1,5',
+            'overall' => 'required|integer|between:1,5'
+        ]); 
+        if ($validator->fails()) 
+        {
+            return redirect('/mess/feedback');
+        }
         $mess_feedback = mess_feedback::where('mess_id','=',$request['mess_id'])->first();
         if(!$mess_feedback)
             return redirect('/mess/feedback');

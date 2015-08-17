@@ -120,13 +120,35 @@ class HomeController extends Controller
      */
     public function show()
     {
-        if(!Session::has('user_name'))
+        if(!Session::has('user_name')&&!Session::has('roll_number'))
         {
             return redirect('login');
         }
         $complaints = Complaints::paginate(10);
         return view('show', compact('complaints'));
     }
+
+    public function get_complaint(Request $request)
+    {
+        $complaint_id = $request->get('complaint_id');
+        $complaint = Complaints::find($complaint_id);
+        Session::put('complaint_id',$complaint_id);
+        echo(json_encode($complaint));
+    }
+
+    public function modify_complaint_status(Request $request)
+    {
+        $complaint = Complaints::find(Session::get('complaint_id'));
+        $complaint->status = $request->get('status');
+        $complaint->save();
+        echo(json_encode($complaint));
+    }
+
+    public function contacts_info()
+    {
+        return view('contacts');
+    }
+
 
     /**
      * Show the form for editing the specified resource.
