@@ -1,12 +1,12 @@
 @extends('base')
 
 @section('title')
-    Mess Incharge
+    Hostel Site
 @stop
 
 @section('topbar')
-<li>
-    <a href="/index"> Home</a>
+<li class="active">
+    <a href="/"> Home</a>
 </li>
 
 <li>
@@ -19,10 +19,7 @@
     <a href="/complaints">Complaints</a>
 </li>
 <li>
-    <a href="/contacts">Contacts</a>
-</li>
-<li class="active">
-<a href="/m_incharge">Mess Incharge</a>
+    <a href="/contacts" >Contacts</a>
 </li>
 @if (Session::has('user_name'))
 	<li>

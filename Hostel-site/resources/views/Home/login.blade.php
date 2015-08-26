@@ -1,18 +1,8 @@
-@extends('hostels')
+@extends('home')
+
 
 @section('sidebar')
-<li class="active">
-    <a href="#">Overview</a>
-</li>
-<li>
-    <a href="/hostels/zircon-a"> Zircon A</a>
-</li>
-<li >
-    <a href="/hostels/zircon-b">Zircon B</a>
-</li>
-<li>
-    <a href="/hostels/zircon-c">Zircon C</a>
-</li>
+
 @stop
 
 @section('content')

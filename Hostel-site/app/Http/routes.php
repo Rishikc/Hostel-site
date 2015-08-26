@@ -11,11 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('base');
 
-});
-Route::get('index', 'HomeController@index');
+Route::get('/', 'HomeController@index');
 Route::get('login', 'HomeController@login');
 Route::get('logout', 'HomeController@logout');
 Route::post('auth', 'HomeController@auth');
@@ -53,19 +50,6 @@ Route::get('mess/{mess_name}', 'MessController@messhome');
 Route::get('mess/{mess_name}/edit', 'MessController@messedit');
 Route::post('mess/{mess_name}/update', 'MessController@messupdate');
 
-Route::get('complaint', 'HomeController@complaint');
-Route::post('complaint/submit', 'HomeController@complaint_submit');
-
-// Route::get('hostels/zircon-a', 'HostelController@Zircon_A');
-// Route::get('hostels/zircon-a/council', 'HostelController@Zircon_A_council');
-// Route::get('hostels/zircon-a/gallery', 'HostelController@Zircon_A_gallery');
-
-
-// Route::get('hostels/zircon-b', 'HostelController@Zircon_B');
-// Route::get('hostels/zircon-b/council', 'HostelController@Zircon_B_council');
-// Route::get('hostels/zircon-b/gallery', 'HostelController@Zircon_B_gallery');
-
-// Route::get('hostels/zircon-c', 'HostelController@Zircon_C');
-// Route::get('hostels/zircon-c/council', 'HostelController@Zircon_C_council');
-// Route::get('hostels/zircon-c/gallery', 'HostelController@Zircon_C_gallery');
-
+Route::get('complaints', 'HomeController@complaint');
+Route::post('complaints/submit', 'HomeController@complaint_submit');
+Route::get('complaints/view', 'HomeController@show');

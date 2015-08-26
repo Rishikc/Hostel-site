@@ -1,20 +1,14 @@
-@extends('hostels')
+@extends('complaints')
 
 @section('sidebar')
-<li>
-    <a href="/hostels">Overview</a>
+<li  class="active">
+    <a href="/complaints">Make a Complaint</a>
 </li>
 <li>
-
-    <a href="/hostels/zircon-a"> Zircon A</a>
-</li>
-<li >
-    <a href="/hostels/zircon-b">Zircon B</a>
-</li>
-<li>
-    <a href="/hostels/zircon-c">Zircon C</a>
+    <a href="/complaints/view">View Complaints</a>
 </li>
 @stop
+
 
 @section('content')
 
@@ -33,7 +27,7 @@
 <div class="col-lg-12">
 <h3>Description</h3>
 <p>
-blah blah blah blah blah.
+Post your complaints here. Come back and track the status of your complaint
 </p>
 </div>
 </div>
@@ -41,7 +35,7 @@ blah blah blah blah blah.
 <br>
 <div class="row">
 <div class="col-lg-12">
-<form class="form-horizontal" method="POST" action="/complaint/submit">
+<form class="form-horizontal" method="POST" action="/complaints/submit">
    <input type="hidden" name="_token" value="{{ csrf_token() }}">
   <div class="form-group">
     <label class="control-label col-sm-2" for="name"><center>Name</center></label>
@@ -93,7 +87,7 @@ blah blah blah blah blah.
   <div class="form-group">
     <label class="control-label col-sm-2" for="complaint"><center>Complaint details</center></label>
     <div class="col-sm-6">
-      <input type="textarea" class="form-control" id="details" name="details" placeholder="Enter details">
+      <textarea class="form-control" id="details" name="details" placeholder="Enter details" rows="5"></textarea>
     </div>
   </div>
 <br>

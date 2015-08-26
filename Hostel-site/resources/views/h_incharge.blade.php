@@ -6,11 +6,9 @@
 
 @section('topbar')
 <li>
-    <a href="/index"> Home</a>
+    <a href="/"> Home</a>
 </li>
-<li >
-    <a href="/about">About</a>
-</li>
+
 <li>
     <a href="/hostels">Hostels</a>
 </li>

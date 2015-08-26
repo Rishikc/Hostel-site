@@ -28,7 +28,7 @@ class HomeController extends Controller
         //return view('tables');
         //return view('charts');
         //return view('forms');
-        return view('index');
+        return view('Home/index');
         //return view('home');
     }
 
@@ -39,7 +39,7 @@ class HomeController extends Controller
      */
     public function login()
     {
-        return view('login');
+        return view('Home/login');
     }
 
    public function auth(Request $request)
@@ -81,7 +81,7 @@ class HomeController extends Controller
     {
         $hostel = Hostels::all();
         $mess= Mess::all();
-        return view('complaint', ['hostels' => $hostel,'mess' => $mess]);   
+        return view('Complaints/complaintform', ['hostels' => $hostel,'mess' => $mess]);   
     }
     public function complaint_submit(Request $request)
     {
@@ -120,10 +120,10 @@ class HomeController extends Controller
      */
     public function show()
     {
-        if(!Session::has('user_name')&&!Session::has('roll_number'))
+        /*if(!Session::has('user_name')&&!Session::has('roll_number'))
         {
             return redirect('login');
-        }
+        }*/
         $complaints = Complaints::paginate(10);
         return view('show', compact('complaints'));
     }
