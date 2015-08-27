@@ -50,24 +50,24 @@ class HomeController extends Controller
             $url="{vayu.nitt.edu:993/imap/ssl/novalidate-cert}";
             $imap=@imap_open($url,$username,$password);
             if($imap == true)
-            {
+            {	
+            	if($username == '106113077')
+               { 
+                 Session::put('user_name','admin');
+                }
+                else
+                {
                 Session::put('roll_number',$username);
+                }
                 return Redirect::to('/hostels');
+                
             }
             else
             {
                 return Redirect::to('login')->with('message', 'Incorrect Username or Password');
             }
-            if($username == 'admin' and $password == 'delta')
-               { 
-                 Session::put('user_name',$username);
-                 return Redirect::to('hostels ')   ;
-                }
-                else
-                {
-                 return Redirect::to('login ')->with('message', 'Invalid username and password.')   ;
-                   
-                }
+            
+               
     }
     public function logout()
     {
