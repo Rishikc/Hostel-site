@@ -27,6 +27,7 @@ Contacts
 @stop
 
 @section('content')
+<br><br><br>
 <h3><center>NATIONAL INSTITUTE OF TECHNOLOGY : TIRUCHIRAPPALLI – 620015</center></h3>
 <h3><center><u>STUDENTS’ COUNCIL 2015-2016</u></center></h3>
 <br>

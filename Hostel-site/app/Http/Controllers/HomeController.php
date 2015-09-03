@@ -125,7 +125,7 @@ class HomeController extends Controller
             return redirect('login');
         }*/
         $complaints = Complaints::paginate(10);
-        return view('show', compact('complaints'));
+        return view('Complaints.view', compact('complaints'));
     }
 
     public function get_complaint(Request $request)

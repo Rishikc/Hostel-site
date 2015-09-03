@@ -16,7 +16,22 @@
     
     <!-- Custom Fonts -->
     <link href="{{asset('/font-awesome/css/font-awesome.min.css')}}font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
+<style>
+.navbar-brand,.navbar-nav li a{
+    line-height: 80px;
+    height: 80px;
+    padding-top: 0;
+}
+.side-nav
+{
+    margin-top:30px;
+}
+.side-nav li a{
+    line-height: 50px;
+    height: 50px;
+    padding-top: 0;
+}
+</style>
 </head>
 
 <body>
@@ -32,7 +47,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Hostel Office</a>
+          <a class="navbar-brand" href="#"><img class="logo img-responsive" src="NITT.png"></a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
@@ -42,9 +57,7 @@
       </div>
       <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
-                    @yield('sidebar')
-
-                    
+                    @yield('sidebar')                    
                 </ul>
             </div> 
     </nav>
