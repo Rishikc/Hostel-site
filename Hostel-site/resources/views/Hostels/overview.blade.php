@@ -33,7 +33,7 @@
 
     
 @foreach ($hostels as $hostel)
-		 <div class="col-xs-6 col-md-4">
+		 <div class="col-xs-6 col-md-3">
     	    <div class="panel panel-default">
         	    <div class="panel-body"><a href="/hostels/{{ $hostel->url_name }}"><img class="img-responsive" src="/Hostels/{{ $hostel->url_name }}.jpg" alt=""  ></a></div>
         	    <div class="panel-footer clearfix"><center>{{ $hostel->name }}</center></div>

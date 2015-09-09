@@ -8,7 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-
+    <meta name="_token" content="{{ csrf_token() }}"/>
+    
     <title>@yield('title')</title>
 
     <link href="{{asset('/css/bootstrap.min.css')}}" rel="stylesheet">
@@ -31,6 +32,45 @@
     height: 50px;
     padding-top: 0;
 }
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  margin-bottom: 60px;
+  background-color:white;
+  overflow-x:hidden;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 115%;
+  height: 60px;
+  background-color:#222222;
+  color:white;
+}
+#quicklinks::-webkit-scrollbar{
+width:0.5em;
+background-color:#222222;
+} 
+/* Track */
+#quicklinks::-webkit-scrollbar-thumb{
+background-color:#555555;
+border-radius:10px;
+}
+#quicklinks::-webkit-scrollbar-thumb:hover{
+background-color:#555555;
+border:1px solid #333333;
+}
+#quicklinks::-webkit-scrollbar-thumb:active{
+background-color:#555555;
+border:1px solid #333333;
+} 
+#ex3::-webkit-scrollbar-track{
+border:1px #333333 solid;
+border-radius:10px;
+-webkit-box-shadow:0 0 6px #333333 inset;
+}
 </style>
 </head>
 
@@ -47,7 +87,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#"><img class="logo img-responsive" src="NITT.png"></a>
+          <a class="navbar-brand" href="#"><img class="logo img-responsive" src="{{asset('NITT.png')}}"></a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
@@ -78,7 +118,10 @@
 
     </div>
     <!-- /#wrapper -->
-
+    <footer class="footer">
+            <br>
+            <center><p>&copy Delta Force</p></center>
+    </footer>
     <!-- jQuery -->
     <script src="{{asset('/js/jquery.js')}}"></script>
 

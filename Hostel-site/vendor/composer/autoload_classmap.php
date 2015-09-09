@@ -13,6 +13,7 @@ return array(
     'CreateMess' => $baseDir . '/database/migrations/2015_07_04_111414_create_mess.php',
     'CreateMessFeedback' => $baseDir . '/database/migrations/2015_08_15_173659_create_mess_feedback.php',
     'CreateMessIncharge' => $baseDir . '/database/migrations/2015_07_04_111420_create_mess_incharge.php',
+    'CreateQuickLinksTable' => $baseDir . '/database/migrations/2015_09_09_154009_create_quick_links_table.php',
     'DatabaseSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',
     'File_Iterator' => $vendorDir . '/phpunit/php-file-iterator/src/Iterator.php',
     'File_Iterator_Facade' => $vendorDir . '/phpunit/php-file-iterator/src/Facade.php',

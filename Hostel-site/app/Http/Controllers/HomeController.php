@@ -11,6 +11,7 @@ use App\Http\Controllers\Controller;
 use App\Hostels as Hostels;
 use App\Mess as Mess;
 use App\complaints as Complaints;
+use App\quick_links as Quick_links;
 
 
 class HomeController extends Controller
@@ -28,7 +29,8 @@ class HomeController extends Controller
         //return view('tables');
         //return view('charts');
         //return view('forms');
-        return view('Home/index');
+        $quick_links = Quick_links::orderBy('id','DESC')->get();
+        return view('Home/index',compact('quick_links'));
         //return view('home');
     }
 
@@ -51,7 +53,7 @@ class HomeController extends Controller
             $imap = shell_exec($shellcmd);
             if($imap == 1)
             {	
-            	if($username == '106113077')
+            	if($username == '106113077'||$username == '106114073')
                { 
                  Session::put('user_name','admin');
                 }
@@ -157,9 +159,32 @@ class HomeController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function edit($id)
+    public function get_quicklink(Request $request)
     {
-        //
+        $quicklink = Quick_links::find($request->id);
+        echo(json_encode($quicklink));
+
+    }
+
+    public function store_quicklink(Request $request)
+    {
+        if($request->id == 0)
+        {
+            $quicklink          = new Quick_links();
+            $quicklink->link    = $request->link;
+            $quicklink->type    = $request->type;
+            $quicklink->title   = $request->title;
+        }
+        else
+        {
+            $quicklink          = Quick_links::find($request->id);
+            $quicklink->link    = $request->link;
+            $quicklink->title   = $request->title;
+        }
+
+        $quicklink->save();
+        return redirect('/');
+
     }
 
     /**
