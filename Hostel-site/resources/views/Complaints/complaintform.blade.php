@@ -22,7 +22,13 @@
     </div>
 
 </div>
-
+@if (Session::has('message'))
+                        <div class="alert alert-info">
+                            <ul>
+                                    <li>{{ Session::get('message') }}</li>
+                            </ul>
+                        </div>
+                    @endif
 <div class="row">
 <div class="col-lg-12">
 <h3>Description</h3>

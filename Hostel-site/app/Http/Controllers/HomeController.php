@@ -47,9 +47,9 @@ class HomeController extends Controller
             $username=explode("@",$request->get('email')); 
             $username = $username[0];
             $password=$request->get('password');
-            $url="{vayu.nitt.edu:993/imap/ssl/novalidate-cert}";
-            $imap=@imap_open($url,$username,$password);
-            if($imap == true)
+            $shellcmd = "python2 nitt_imap_login.py ".$username." ".$password;
+            $imap = shell_exec($shellcmd);
+            if($imap == 1)
             {	
             	if($username == '106113077')
                { 
@@ -95,9 +95,10 @@ class HomeController extends Controller
         $complaint = Complaints::insert(['building' => $building,'hostel' => $hostel_name,'subject' => $subject,'description' => $details,'created_name' => $name,'created_rollnumber' => $rollnumber]);
         
         if($complaint)
-            return 'complaint recored successfully';
+            return Redirect::to('/complaints')->with('message', 'Complaint recorded successfully.');
         else
-            return 'complaint could not be recorded';
+            return Redirect::to('/complaints')->with('message', 'Complaint could not be recorded.');
+        
         //return view('Hostels.complaint', ['details' => $hostel]);   
     }
 
