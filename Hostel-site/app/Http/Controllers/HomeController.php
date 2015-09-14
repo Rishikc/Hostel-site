@@ -56,12 +56,13 @@ class HomeController extends Controller
             	if($username == '106113077'||$username == '106114073')
                { 
                  Session::put('user_name','admin');
-                }
+                 Session::put('roll_number',$username);
+               }
                 else
                 {
                 Session::put('roll_number',$username);
                 }
-                return Redirect::to('/hostels');
+                return Redirect::to('/home');
                 
             }
             else
