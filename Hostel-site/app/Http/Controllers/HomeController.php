@@ -62,7 +62,7 @@ class HomeController extends Controller
                 {
                 Session::put('roll_number',$username);
                 }
-                return Redirect::to('/home');
+                return Redirect::to('/');
                 
             }
             else
@@ -90,7 +90,7 @@ class HomeController extends Controller
     {
         $name =$request->get('name');
         $building=$request->get('option');
-        $rollnumber=$request->get('roll');
+        $rollnumber=Session('roll_number');
         $subject=$request->get('subject');
         $details=$request->get('details');
         $hostel_name=$request->get('hostel_name');
@@ -98,7 +98,7 @@ class HomeController extends Controller
         $complaint = Complaints::insert(['building' => $building,'hostel' => $hostel_name,'subject' => $subject,'description' => $details,'created_name' => $name,'created_rollnumber' => $rollnumber]);
         
         if($complaint)
-            return Redirect::to('/complaints')->with('message', 'Complaint recorded successfully.');
+            return Redirect::to('/complaintts')->with('message', 'Complaint recorded successfully.');
         else
             return Redirect::to('/complaints')->with('message', 'Complaint could not be recorded.');
         

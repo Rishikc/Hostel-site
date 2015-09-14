@@ -93,12 +93,24 @@ border-radius:10px;
           <ul class="nav navbar-nav">
                 @yield('topbar')
           </ul>
+          
+          @if(Session::has('user_name'))
+          <ul class="nav navbar-nav navbar-right">
+             <li><a href="#"><span class="glyphicon glyphicon-user"></span> Hi, {{ Session::get('user_name') }}</a></li>
+          </ul>
+          @else
+          <ul class="nav navbar-nav navbar-right">
+             <li><a href="#"><span class="glyphicon glyphicon-user"></span> Hi, {{ Session::get('roll_number') }}</a></li>
+          </ul>
+          @endif
+        
         </div><!--/.nav-collapse -->
       </div>
       <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     @yield('sidebar')                    
                 </ul>
+
             </div> 
     </nav>
 
