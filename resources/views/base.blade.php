@@ -98,7 +98,7 @@ border-radius:10px;
           <ul class="nav navbar-nav navbar-right">
              <li><a href="#"><span class="glyphicon glyphicon-user"></span> Hi, {{ Session::get('user_name') }}</a></li>
           </ul>
-          @else
+          @elseif(Session::has('roll_number'))
           <ul class="nav navbar-nav navbar-right">
              <li><a href="#"><span class="glyphicon glyphicon-user"></span> Hi, {{ Session::get('roll_number') }}</a></li>
           </ul>
@@ -132,7 +132,7 @@ border-radius:10px;
     <!-- /#wrapper -->
     <footer class="footer">
             <br>
-            <center><p>&copy Delta Force</p></center>
+            <center><p>Made with &hearts; by Delta Force</p></center>
     </footer>
     <!-- jQuery -->
     <script src="{{asset('/js/jquery.js')}}"></script>
