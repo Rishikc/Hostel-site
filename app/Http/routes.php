@@ -41,6 +41,11 @@ Route::group(['middleware' => 'adminauth'], function () {
 	Route::post('/quicklink', 'HomeController@store_quicklink');
 
 });
+
+Route::group(['middleware' => 'userauth'], function() {
+	Route::get('complaints/make', 'HomeController@complaint');
+	Route::post('complaints/submit', 'HomeController@complaint_submit');
+});
 Route::get('hostels', 'HostelController@index');
 Route::get('hostels/show', 'HostelController@show');
 Route::get('hostels/{hostel_name}', 'HostelController@hostelhome');
@@ -54,6 +59,4 @@ Route::get('mess/feedback','MessController@feedback');
 Route::post('mess/feedback','MessController@store_feedback');
 Route::get('mess/{mess_name}', 'MessController@messhome');
 
-Route::get('complaints', 'HomeController@complaint');
-Route::post('complaints/submit', 'HomeController@complaint_submit');
-Route::get('complaints/view', 'HomeController@show');
+Route::get('complaints', 'HomeController@show');

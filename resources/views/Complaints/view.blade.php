@@ -1,11 +1,11 @@
 @extends('complaints')
 
 @section('sidebar')
-<li  class="active">
-    <a href="/complaints">Make a Complaint</a>
-</li>
 <li>
-    <a href="/complaints/view">View Complaints</a>
+    <a href="/complaints/make">Make a Complaint</a>
+</li>
+<li class="active">
+    <a href="/complaints">View Complaints</a>
 </li>
 @stop
 
