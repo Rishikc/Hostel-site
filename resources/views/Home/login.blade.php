@@ -54,14 +54,16 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Login</div>
                 <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/auth   ') }}">
+                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/auth') }}">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                         <div class="form-group">
                             <label class="col-md-4 control-label">Webmail</label>
                             <div class="col-md-6">
-                                <input type="email" class="form-control" name="email" value="{{ old('email') }}">
-                                roll_no@nitt.edu
+                            <div class="input-group">
+                                <input type="text" class="form-control" name="username" value="{{ old('email') }}" placeholder="Roll Number">
+                                <div class="input-group-addon">@nitt.edu</div>
+                            </div>
                             </div>
                         </div>
 
