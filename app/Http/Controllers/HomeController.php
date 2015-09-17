@@ -52,7 +52,7 @@ class HomeController extends Controller
             $imap = shell_exec($shellcmd);
             if($imap == 1)
             {	
-            	if($username == '106113077'||$username == '106114073')
+            	if($username == '106113077'||$username == '106114073'||$username == '106113051')
                { 
                  Session::put('user_name','admin');
                  Session::put('roll_number',$username);
