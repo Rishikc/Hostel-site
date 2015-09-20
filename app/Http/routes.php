@@ -55,8 +55,8 @@ Route::get('hostels/{hostel_name}/gallery', 'HostelController@hostelgallery');
 Route::get('mess', 'MessController@index');
 Route::get('mess/show', 'MessController@show');
 
-Route::get('mess/feedback','MessController@feedback');
-Route::post('mess/feedback','MessController@store_feedback');
+//Route::get('mess/feedback','MessController@feedback');
+//Route::post('mess/feedback','MessController@store_feedback');
 Route::get('mess/{mess_name}', 'MessController@messhome');
 
 Route::get('complaints', 'HomeController@show');
