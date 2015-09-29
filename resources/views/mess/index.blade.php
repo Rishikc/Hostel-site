@@ -2,18 +2,18 @@
 
 @section('sidebar')
 <li>
-    <a href="../mess">Overview</a>
+    <a href={{ action('MessController@index') }}>Overview</a>
 </li>
 @foreach ($messes as $mess)
 <li>
-    <a href="/mess/{{ $mess->url_name }}"> {{ $mess->name }}</a>
+    <a href={{ action('MessController@messhome',array('mess_name'=>$mess->name)) }} > {{ $mess->name }}</a>
 </li>
 @endforeach 
 <li class="active">
-	<a href="/mess/show">Show all</a>
+	<a href={{ action('MessController@show') }}>Show all</a>
 </li>
-<li>
-<a href="/mess/create">Create</a>
+<li >
+<a href={{ action('MessController@create') }}>Create</a>
 </li>
 @stop
 

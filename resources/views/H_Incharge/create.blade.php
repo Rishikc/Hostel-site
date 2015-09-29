@@ -3,11 +3,11 @@
 @section('sidebar')
 
 <li>
-<a href="/h_incharge">Show all</a>
+<a href={{ action('H_InchargeController@index') }}>Show all</a>
 </li>
 
 <li class="active">
-<a href="/h_incharge/screate">Create</a>
+<a href={{ action('H_InchargeController@create') }}>Create</a>
 </li>
 
 @stop
@@ -36,7 +36,7 @@
 </div>
 <div class="row">
 <div class="col-lg-12">
-{!! Form::open(array("url"=>"/h_incharge","class"=>"form-horizontal",'files' => true))!!}
+{!! Form::open(array("url"=>action('H_InchargeController@store'),"class"=>"form-horizontal",'files' => true))!!}
 
 	<div class="form-group">
     	<label class="control-label col-sm-2" for="name"><center>Name of Incharge</center></label>

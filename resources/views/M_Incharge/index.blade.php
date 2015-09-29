@@ -1,14 +1,14 @@
 @extends('m_incharge')
 
 @section('sidebar')
-<li class="active">
-<a href="/m_incharge">Show all</a>
-</li>
 
 <li>
-<a href="/m_incharge/create">Create</a>
+<a href={{ action('M_InchargeController@index') }}>Show all</a>
 </li>
 
+<li class="active">
+<a href={{ action('M_InchargeController@create') }}>Create</a>
+</li>
 
 @stop
 

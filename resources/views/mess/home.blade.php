@@ -2,7 +2,7 @@
 
 @section('sidebar')
 <li>
-    <a href="/mess">Overview</a>
+    <a href={{ action('MessController@index') }}>Overview</a>
 </li>
 @foreach ($messes as $mess)
 <li
@@ -11,7 +11,7 @@
         echo 'class="active"'
 ?>
 >
-    <a href="/mess/{{ $mess->url_name }}"> {{ $mess->name }}</a>
+    <a href={{ action('MessController@messhome',array('mess_name'=>$mess->name)) }} > {{ $mess->name }}</a>
 </li>
 @endforeach 
 @stop
@@ -67,7 +67,7 @@
 </div>
 
 @if (Session::has('user_name'))
-<a href="/mess/{{ $details->url_name }}/edit"><button type="button" class="btn btn-danger">edit</button></a>
+<a href={{ action('MessController@messedit',array('mess_name'=>$details->url_name)) }}><button type="button" class="btn btn-danger">edit</button></a>
 @endif
 
 @stop

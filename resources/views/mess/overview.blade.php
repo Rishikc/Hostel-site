@@ -2,11 +2,11 @@
 
 @section('sidebar')
 <li class="active">
-    <a href="#">Overview</a>
+    <a href={{ action('MessController@index') }}>Overview</a>
 </li>
 @foreach ($messes as $mess)
 <li >
-    <a href="/mess/{{ $mess->url_name}}"> {{ $mess->name }}</a>
+    <a href={{ action('MessController@messhome',array('mess_name'=>$mess->name)) }} > {{ $mess->name }}</a>
 </li>
 @endforeach 
 
@@ -34,7 +34,7 @@
 
 		 <div class="col-xs-6 col-md-4">
     	    <div class="panel panel-default">
-        	    <div class="panel-body"><a href="/mess/{{ $mess->url_name }}"><img class="img-responsive" src="/Mess/{{ $mess->url_name }}.jpg" alt=""  ></a></div>
+        	    <div class="panel-body"><a href={{ action('MessController@messhome',array('mess_name'=>$mess->name)) }}><img class="img-responsive" src="/Mess/{{ $mess->url_name }}.jpg" alt=""  ></a></div>
         	    <div class="panel-footer clearfix"><center>{{ $mess->name }}</center></div>
         	</div>
      	</div>

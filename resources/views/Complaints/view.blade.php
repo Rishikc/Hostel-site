@@ -1,11 +1,11 @@
 @extends('complaints')
 
 @section('sidebar')
-<li>
-    <a href="/complaints/make">Make a Complaint</a>
+<li  >
+    <a href={{ action('HomeController@complaint')}}>Make a Complaint</a>
 </li>
 <li class="active">
-    <a href="/complaints">View Complaints</a>
+    <a href={{ action('HomeController@show')}}>View Complaints</a>
 </li>
 @stop
 

@@ -2,19 +2,19 @@
 
 @section('sidebar')
 <li>
-    <a href="../mess">Overview</a>
+    <a href={{ action('MessController@index') }}>Overview</a>
 </li>
 @foreach ($messes as $mess)
 <li>
-    <a href="/mess/{{ $mess->url_name }}"> {{ $mess->name }}</a>
+    <a href={{ action('MessController@messhome',array('mess_name'=>$mess->name)) }} > {{ $mess->name }}</a>
 </li>
 @endforeach 
 <li class="active">
-	<a href="/mess/feedback">Feedback</a>
+	<a href={{ action('MessController@feedback') }}>Feedback</a>
 </li>
 <li>
 <li>
-	<a href="/mess/show">Show all</a>
+	<a href={{ action('MessController@show') }}>Show all</a>
 </li>
 @stop
 
@@ -22,7 +22,7 @@
 @section('content')
 <div class="row">
 	<div class="col-lg-12">
-		<form method="post" class="form-horizontal" action="/mess/feedback">
+		<form method="post" class="form-horizontal" action={{ action('MessController@store_feedback') }}>
 			<input type="hidden" name="_token" value="{{ csrf_token() }}">
 			<div class="form-group">
    				<label class="control-label col-sm-2" for="mess_id"><center>Mess Name</center></label>

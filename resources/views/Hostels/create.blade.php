@@ -2,19 +2,19 @@
 
 @section('sidebar')
 <li>
-    <a href="../hostels">Overview</a>
+    <a href={{ action('HostelController@index') }}>Overview</a>
 </li>
 @foreach ($hostels as $hostel)
 <li>
 
-    <a href="/hostels/{{ $hostel->url_name }}"> {{ $hostel->name }}</a>
+    <a href={{ action('HostelController@hostelhome',array('hostel_name'=>$hostel->name)) }}> {{ $hostel->name }}</a>
 </li>
 @endforeach 
 <li>
-	<a href="/hostels/show">Show all</a>
+	<a href={{ action('HostelController@show') }}>Show all</a>
 </li>
 <li class="active">
-<a href="/hostels/create">Create</a>
+<a href={{ action('HostelController@create') }}>Create</a>
 </li>
 @stop
 
@@ -42,7 +42,7 @@
 </div>
 <div class="row">
 <div class="col-lg-12">
-<form method="post" class="form-horizontal" action="/hostels/create" enctype="multipart/form-data">
+<form method="post" class="form-horizontal" action={{ action('HostelController@store') }} enctype="multipart/form-data">
 <input type="hidden" name="_token" value="{{ csrf_token() }}">
 	<div class="form-group">
     			<label class="control-label col-sm-2" for="name"><center>Name of Hostel</center></label>

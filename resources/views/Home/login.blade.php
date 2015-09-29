@@ -1,29 +1,29 @@
 @extends('base')
 @section('topbar')
-<li>
-    <a href="/"> Home</a>
+<li >
+    <a href={{ action('HomeController@index') }}> Home</a>
 </li>
 
 <li>
-    <a href="/hostels">Hostels</a>
+    <a href={{ action('HostelController@index') }}>Hostels</a>
 </li>
 <li>
-    <a href="/mess">Messes</a>
+    <a href={{ action('MessController@index') }}>Messes</a>
 </li>
 <li>
-    <a href="/complaints">Complaints</a>
+    <a href={{ action('HomeController@show') }}>Complaints</a>
 </li>
 <li>
-    <a href="/contacts" >Contacts</a>
+    <a href={{ action('HomeController@contacts_info') }}>Contacts</a>
 </li>
 @if (Session::has('user_name')||Session::has('roll_number'))
     <li>
-        <a href="/logout" >Logout</a>
+        <a href={{ action('HomeController@logout') }} >Logout</a>
     </li>
 
 @else
     <li class="active">
-        <a href="/login" >Login</a>
+        <a href={{ action('HomeController@login') }} >Login</a>
     </li>
 
 @endif
@@ -54,7 +54,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Login</div>
                 <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/auth') }}">
+                    <form class="form-horizontal" role="form" method="POST" action="{{ action('HomeController@auth') }}">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                         <div class="form-group">

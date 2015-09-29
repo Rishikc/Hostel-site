@@ -6,14 +6,14 @@
 </li>
 @foreach ($hostels as $hostel)
 <li>
-    <a href="/hostels/{{ $hostel->url_name }}"> {{ $hostel->name }}</a>
+    <a href={{ action('HostelController@hostelhome',array('hostel_name'=>$hostel->name)) }}> {{ $hostel->name }}</a>
 </li>
 @endforeach 
 <li class="active">
-	<a href="/hostels/show">Show all</a>
+	<a href={{ action('HostelController@show') }}>Show all</a>
 </li>
 <li>
-<a href="/hostels/create">Create</a>
+<a href={{ action('HostelController@create') }}>Create</a>
 </li>
 @stop
 

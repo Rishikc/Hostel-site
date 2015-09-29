@@ -67,7 +67,8 @@ class MessController extends Controller
     public function messedit($mess_name)
     {
         $mess = Mess::where('url_name', '=', $mess_name)->first();
-        return view('mess.edit', ['details' => $mess]);
+        $messes = Mess::all();
+        return view('mess.edit', ['details' => $mess,'messes'=>$messes]);
     }
 
     public function messupdate(Request $request,$mess_name)

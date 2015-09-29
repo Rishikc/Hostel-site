@@ -2,10 +2,10 @@
 
 @section('sidebar')
 <li  class="active">
-    <a href="/complaints/make">Make a Complaint</a>
+    <a href={{ action('HomeController@complaint')}}>Make a Complaint</a>
 </li>
 <li>
-    <a href="/complaints">View Complaints</a>
+    <a href={{ action('HomeController@show')}}>View Complaints</a>
 </li>
 @stop
 
@@ -41,7 +41,7 @@ Post your complaints here. Come back and track the status of your complaint
 <br>
 <div class="row">
 <div class="col-lg-12">
-<form class="form-horizontal" method="POST" action="/complaints/submit">
+<form class="form-horizontal" method="POST" action={{ action('HomeController@complaint_submit')}}>
    <input type="hidden" name="_token" value="{{ csrf_token() }}">
   <div class="form-group">
     <label class="control-label col-sm-2" for="name"><center>Name</center></label>

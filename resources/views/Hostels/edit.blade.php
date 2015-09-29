@@ -2,17 +2,13 @@
 
 @section('sidebar')
 <li>
-    <a href="/hostels">Overview</a>
+    <a href={{ action('HostelController@index') }}>Overview</a>
 </li>
 <li>
-
-    <a href="/hostels/zircon-a"> Zircon A</a>
+    <a href={{ action('HostelController@show') }}>Show all</a>
 </li>
 <li >
-    <a href="/hostels/zircon-b">Zircon B</a>
-</li>
-<li>
-    <a href="/hostels/zircon-c">Zircon C</a>
+<a href={{ action('HostelController@create') }}>Create</a>
 </li>
 @stop
 

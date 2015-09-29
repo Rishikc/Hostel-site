@@ -2,7 +2,7 @@
 
 @section('sidebar')
 <li>
-    <a href="/hostels">Overview</a>
+    <a href={{ action('HostelController@index') }}>Overview</a>
 </li>
 @foreach ($hostels as $hostel)
 <li
@@ -11,7 +11,7 @@
         echo 'class="active"'
 ?>
 >
-    <a href="/hostels/{{ $hostel->url_name }}"> {{ $hostel->name }}</a>
+    <a href={{ action('HostelController@hostelhome',array('hostel_name'=>$hostel->name)) }}> {{ $hostel->name }}</a>
 </li>
 @endforeach 
 @stop
@@ -68,7 +68,7 @@
 
 
 @if (Session::has('user_name'))
-<a href="/hostels/{{ $details->name }}/edit"><button type="button" class="btn btn-danger">edit</button></a>
+<a href={{ action('HostelController@hosteledit',array('hostel_name'=>$details->name)) }} ><button type="button" class="btn btn-danger">edit</button></a>
 @endif
 
 @stop
