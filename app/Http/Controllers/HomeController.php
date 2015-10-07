@@ -87,17 +87,38 @@ class HomeController extends Controller
     }
     public function complaint_submit(Request $request)
     {
-        $name =$request->get('name');
-        $building=$request->get('option');
-        $rollnumber=Session('roll_number');
-        $subject=$request->get('subject');
-        $details=$request->get('details');
-        $hostel_name=$request->get('hostel_name');
+        $rollno = Session('roll_number');
 
-        $complaint = Complaints::insert(['building' => $building,'hostel' => $hostel_name,'subject' => $subject,'description' => $details,'created_name' => $name,'created_rollnumber' => $rollnumber]);
+        $ldapconn = ldap_connect("10.0.0.38")
+            or die("Could not connect to LDAP server.");
+
+        ldap_set_option($ldapconn, LDAP_OPT_PROTOCOL_VERSION, 3);
+        ldap_set_option($ldapconn, LDAP_OPT_REFERRALS, 0);
+    
+        $ldapbind = @ldap_bind($ldapconn,env('LDAP_USERNAME'),env('LDAP_PASSWORD'));
         
-        if($complaint)
-            return Redirect::to('/complaintts')->with('message', 'Complaint recorded successfully.');
+        if ($ldapbind)
+        {
+            $sr=ldap_search($ldapconn,"DC=octa,DC=edu", "cn=".$rollno);
+            $ldaparr = ldap_get_entries($ldapconn,$sr); 
+
+            if($ldaparr['count']==0)
+                return redirect('/registration/nitt')->with("message","Not a Valid Roll Number");
+            $name = $ldaparr[0]['displayname'][0];
+            $building=$request->get('option');
+            $rollnumber=Session('roll_number');
+            $subject=$request->get('subject');
+            $details=$request->get('details');
+            $hostel_name=$request->get('hostel_name');
+
+            $complaint = Complaints::insert(['building' => $building,'hostel' => $hostel_name,'subject' => $subject,'description' => $details,'created_name' => $name,'created_rollnumber' => $rollnumber]);
+            
+            if($complaint)
+                return Redirect::to('/complaints')->with('message', 'Complaint recorded successfully.');
+            else
+                return Redirect::to('/complaints')->with('message', 'Complaint could not be recorded.');
+        }
+        
         else
             return Redirect::to('/complaints')->with('message', 'Complaint could not be recorded.');
         
