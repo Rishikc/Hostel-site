@@ -51,7 +51,7 @@ Post your complaints here. Come back and track the status of your complaint
   </div>
 
 <div class="form-group">
-    <label class="control-label col-sm-2" for="name"><center>Name</center></label>
+    <label class="control-label col-sm-2" for="option"><center>Problem Location</center></label>
     <div class="col-sm-6">
         <div class="radio" required>
             <label><input type="radio" name="option" value="hostel">Hostel</label>
