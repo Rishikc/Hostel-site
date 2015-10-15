@@ -43,15 +43,8 @@ Post your complaints here. Come back and track the status of your complaint
 <div class="col-lg-12">
 <form class="form-horizontal" method="POST" action={{ action('HomeController@complaint_submit')}}>
    <input type="hidden" name="_token" value="{{ csrf_token() }}">
-  <div class="form-group">
-    <label class="control-label col-sm-2" for="name"><center>Name</center></label>
-    <div class="col-sm-6">
-      <input type="text" class="form-control" id="name" name="name" placeholder="Enter name" required>
-    </div>
-  </div>
-
 <div class="form-group">
-    <label class="control-label col-sm-2" for="name"><center>Name</center></label>
+    <label class="control-label col-sm-2" for="option"><center>Problem Location</center></label>
     <div class="col-sm-6">
         <div class="radio" required>
             <label><input type="radio" name="option" value="hostel">Hostel</label>
