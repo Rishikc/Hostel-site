@@ -87,7 +87,7 @@ border-radius:10px;
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#"><img class="logo img-responsive" src="{{asset('NITT.png')}}"></a>
+          <a class="navbar-brand" href=""><img class="logo img-responsive" src="{{asset('NITT.png')}}"></a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
