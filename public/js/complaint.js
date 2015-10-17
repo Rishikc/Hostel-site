@@ -27,6 +27,7 @@ function modalInject(json)
 	$('#subject').html("<strong>Subject</strong> : "+json.subject);
 	$('#description').html("<strong>Description</strong> : "+json.description);
 	$('#status').html("<strong>Status</strong> : "+json.status);
+	$('#time').html("<strong>TIme of complaint</strong> : "+json.created_at);
 
 	$('#complaintmodal').modal('show');
 }

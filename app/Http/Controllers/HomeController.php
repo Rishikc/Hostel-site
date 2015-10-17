@@ -110,8 +110,9 @@ class HomeController extends Controller
             $subject=$request->get('subject');
             $details=$request->get('details');
             $hostel_name=$request->get('hostel_name');
+            $phoneno = $request->get('phoneno');
 
-            $complaint = Complaints::insert(['building' => $building,'hostel' => $hostel_name,'subject' => $subject,'description' => $details,'created_name' => $name,'created_rollnumber' => $rollnumber]);
+            $complaint = Complaints::insert(['building' => $building,'hostel' => $hostel_name,'subject' => $subject,'description' => $details,'created_name' => $name,'created_rollnumber' => $rollnumber, 'phoneno' => $phoneno]);
             
             if($complaint)
                 return Redirect::to('/complaints')->with('message', 'Complaint recorded successfully.');

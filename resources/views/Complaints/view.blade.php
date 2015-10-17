@@ -49,6 +49,8 @@
    			<li class="list-group-item col-sm-12" id="description"></li>
    			<br><br>
    			<li class="list-group-item col-sm-12" id="status"></li>
+        <br><br>
+        <li class="list-group-item col-sm-12" id="time"></li>
    			<br><br>
    		</ul>
       </div>

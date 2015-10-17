@@ -22,7 +22,7 @@ class CreateComplaints extends Migration
             $table->string('created_name',40);
             $table->string('created_rollnumber',40);
             $table->string('status',40)->default("Received");
-//            $table->timestamp('created_at',100);
+            //$table->timestamp('created_at',100);
             
         });
     }
