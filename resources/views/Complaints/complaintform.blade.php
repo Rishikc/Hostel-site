@@ -75,9 +75,14 @@ Post your complaints here. Come back and track the status of your complaint
   </div>
 
   <div class="form-group">
-    <label class="control-label col-sm-2" for="subject"><center>Complaint subject</center></label>
+    <label class="control-label col-sm-2" for="subject"><center>Complaint category</center></label>
     <div class="col-sm-6">
-      <input type="text" class="form-control" id="subject" name="subject" placeholder="Enter subject" required>
+      @foreach ($categories as $cat)
+      <div class="radio">
+        <label><input type="radio" name="subject" value="{{$cat->url_name}}">{{ $cat -> name}}</label>
+      </div>
+      @endforeach
+      
     </div>
   </div>
 

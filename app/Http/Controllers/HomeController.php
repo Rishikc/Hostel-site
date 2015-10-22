@@ -83,7 +83,8 @@ class HomeController extends Controller
     {
         $hostel = Hostels::all();
         $mess= Mess::all();
-        return view('Complaints/complaintform', ['hostels' => $hostel,'mess' => $mess]);   
+        $categories = Categories::all();
+        return view('Complaints/complaintform', ['hostels' => $hostel,'mess' => $mess,'categories' => $categories]);
     }
     public function complaint_submit(Request $request)
     {
