@@ -209,13 +209,19 @@ class HomeController extends Controller
         if($request->id == 0)
         {
             $quicklink          = new Quick_links();
-            $quicklink->link    = $request->link;
+            $link = $request->link;
+            if(substr($link,0,4) != 'http')
+                $link = 'http://' . $link;
+            $quicklink->link    = $link;
             $quicklink->type    = $request->type;
             $quicklink->title   = $request->title;
         }
         else
         {
             $quicklink          = Quick_links::find($request->id);
+            $link = $request->link;
+            if(substr($link,0,4) != 'http')
+                $link = 'http://' . $link;
             $quicklink->link    = $request->link;
             $quicklink->title   = $request->title;
         }
