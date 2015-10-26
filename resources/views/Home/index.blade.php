@@ -39,17 +39,21 @@
 <br>
 <center>
 <h2>Hostel Office</h2>
-<img class="img-responsive thumbnail" src="NITT_clock_tower.jpg" width="500">
+
 </center>
-<div>
-<p>
-The National Institute of Technology (formerly known as Regional Engineering College) Tiruchirappalli, situated in the heart of Tamil Nadu on the banks of river Cauvery, was started as a joint and co-operative venture of the Government of India and the Government of Tamil Nadu in 1964 with a view to catering to the needs of man-power in technology for the country. The college has been conferred with autonomy in financial and administrative matters to achieve rapid development.
-The Student Association is the voice of the students in the campus and looks into all matters of interest of the students. It is a medium of communication between the students and the management of the college.
-Students' council in association with Hostel office has come up with this new initiative for submitting students complaints and feedback online. Also information about each and every hostel is available on this site.
-</p>
+<div class="row">
+	<div class="panel panel-default col-sm-8 col-lg-offset-1">
+	  <div class="panel-body">Click <a href="complaints/make">here</a> to login and make a complaint</div>
+	</div>
 </div>
-<br>
-<br>
+
+<div class="row">
+
+	<div class="panel panel-default col-sm-8 col-lg-offset-1">
+	  <div class="panel-body">Click <a href="complaints">here</a> to view all complaints</div>
+	</div>
+</div>
+
 <div class="row">
 	<div class="col-sm-12 col-lg-4 col-lg-offset-1" style="background-color:#222222;color:white;border-radius:20px;">
 		<center><h5>Quick Links
