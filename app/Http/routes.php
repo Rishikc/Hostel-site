@@ -25,6 +25,10 @@ Route::post('/modify_complaint_status','HomeController@modify_complaint_status')
 
 Route::get('contacts','HomeController@contacts_info');
 
+Route::group(['middleware' => 'userauth'], function() {
+	Route::get('complaints/make', 'HomeController@complaint');
+	Route::post('complaints/submit', 'HomeController@complaint_submit');
+});
 
 Route::group(['middleware' => 'adminauth'], function () {
 	Route::get('hostels/create', 'HostelController@create');
@@ -39,13 +43,11 @@ Route::group(['middleware' => 'adminauth'], function () {
 	Route::resource('m_incharge', 'M_InchargeController');
 	Route::post('/get_quicklink', 'HomeController@get_quicklink');
 	Route::post('/quicklink', 'HomeController@store_quicklink');
+	Route::get('complaints/{filter}', 'HomeController@show_filter');
 
 });
 
-Route::group(['middleware' => 'userauth'], function() {
-	Route::get('complaints/make', 'HomeController@complaint');
-	Route::post('complaints/submit', 'HomeController@complaint_submit');
-});
+
 Route::get('hostels', 'HostelController@index');
 Route::get('hostels/show', 'HostelController@show');
 Route::get('hostels/{hostel_name}', 'HostelController@hostelhome');

@@ -7,6 +7,14 @@
 <li>
     <a href={{ action('HomeController@show')}}>View Complaints</a>
 </li>
+@if(Session::has('user_name'))
+  @foreach ($categories as $cat)
+    <li>
+    <a href={{ action('HomeController@show_filter', array('filter' => $cat->url_name))}} >{{$cat->name}}</a>
+    </li>
+     
+  @endforeach
+@endif
 @stop
 
 

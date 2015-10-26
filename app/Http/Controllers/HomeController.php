@@ -151,8 +151,23 @@ class HomeController extends Controller
             return redirect('login');
         }*/
         $complaints = Complaints::paginate(10);
-        return view('Complaints.view', compact('complaints'));
+        $categories = Categories::all();
+        return view('Complaints.view', compact('complaints', 'categories'));
     }
+    public function show_filter($filter)
+    {
+        /*if(!Session::has('user_name')&&!Session::has('roll_number'))
+        {
+            return redirect('login');
+        }*/
+        $cat = Categories::where('url_name', '=', $filter)->get();
+        $categories = Categories::all();
+        if(sizeof($cat)==0)
+            return Redirect::to('/complaints')->with('message', 'Category not found.');
+        $complaints = Complaints::where('subject', '=', $filter)->paginate(10);
+        return view('Complaints.view', compact('complaints', 'categories'));
+    }
+
 
     public function get_complaint(Request $request)
     {
