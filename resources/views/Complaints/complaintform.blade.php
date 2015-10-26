@@ -35,6 +35,12 @@
 <p>
 Post your complaints here. Come back and track the status of your complaint
 </p>
+<h3>Instructions</h3>
+<p>
+<li>Choose appropriate category for the complaint</li>
+<li>Mention location of problem (Room no, Hostel name, etc.) and all other necessary information in the description</li>
+<li>Restrain from giving complaints about mess food quality, quantity, etc. This can be given in the monthly feedback form for messes</li>
+</p>
 </div>
 </div>
 <br>
@@ -70,7 +76,7 @@ Post your complaints here. Come back and track the status of your complaint
     <div class="form-group">
     <label class="control-label col-sm-2" for="subject"><center>Phone number</center></label>
     <div class="col-sm-6">
-      <input type="text" class="form-control" id="subject" name="phoneno" placeholder="Phone number" required>
+      <input type="text" class="form-control" id="subject" name="phoneno" placeholder="Phone number" pattern=[0-9]{10} title="10 digit mobile no. required" required>
     </div>
   </div>
 
@@ -80,16 +86,18 @@ Post your complaints here. Come back and track the status of your complaint
       @foreach ($categories as $cat)
       <div class="radio">
         <label><input type="radio" name="subject" value="{{$cat->url_name}}">{{ $cat -> name}}</label>
+        <h6>{{$cat->description}}</h6>
       </div>
+
       @endforeach
       
     </div>
   </div>
 
   <div class="form-group">
-    <label class="control-label col-sm-2" for="complaint"><center>Complaint details</center></label>
+    <label class="control-label col-sm-2" for="complaint"><center>Complaint description</center></label>
     <div class="col-sm-6">
-      <textarea class="form-control" id="details" name="details" placeholder="Enter details" rows="5" required></textarea>
+      <textarea class="form-control" id="details" name="details" placeholder="Enter details about your complaint" rows="5" required></textarea>
     </div>
   </div>
 <br>

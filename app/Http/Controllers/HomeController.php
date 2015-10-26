@@ -12,7 +12,7 @@ use App\Hostels as Hostels;
 use App\Mess as Mess;
 use App\complaints as Complaints;
 use App\quick_links as Quick_links;
-
+use App\Categories as Categories;
 
 class HomeController extends Controller
 {

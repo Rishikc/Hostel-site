@@ -18,6 +18,7 @@ class Categories extends Migration
             $table->increments('id', 100);
             $table->string('name', 100);
             $table->string('url_name', 100);
+            $table->string('description', 500);
         });
 
     }
@@ -30,5 +31,6 @@ class Categories extends Migration
     public function down()
     {
         //
+        Schema::dropIfExists('categories');
     }
 }
