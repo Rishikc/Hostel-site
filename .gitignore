@@ -1,6 +1,8 @@
 .env
+.env*
 vendor/
 *~
 ~*
 public/Hostels
 public/Mess
+public/Hostel\ Incharge
