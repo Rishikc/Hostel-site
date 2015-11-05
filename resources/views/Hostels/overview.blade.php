@@ -7,7 +7,7 @@
 @foreach ($hostels as $hostel)
 <li>
 
-    <a href={{ action('HostelController@hostelhome',array('hostel_name'=>$hostel->name)) }}> {{ $hostel->name }}</a>
+    <a href={{ action('HostelController@hostelhome',array('hostel_name'=>$hostel->url_name)) }}> {{ $hostel->name }}</a>
 </li>
 @endforeach 
 @stop
