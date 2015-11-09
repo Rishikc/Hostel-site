@@ -11,7 +11,7 @@
         echo 'class="active"'
 ?>
 >
-    <a href={{ action('MessController@messhome',array('mess_name'=>$mess->name)) }} > {{ $mess->name }}</a>
+    <a href={{ action('MessController@messhome',array('mess_name'=>$mess->url_name)) }} > {{ $mess->name }}</a>
 </li>
 @endforeach 
 @stop
@@ -56,7 +56,7 @@
     <div class="col-xs-6 col-md-4">
             <div class="panel panel-default">
                 <div class="panel-body"><img class="img-responsive" src="/Mess Incharge/{{ $mi->image_url }}.jpg" alt=""  ></div>
-                <div class="panel-footer clearfix"><center>{{ $mi->name }}</center><center>{{$mi->position}}</center></div>
+                <div class="panel-footer clearfix"><center>{{ $mi->name }}</center><center>{{$mi->position}}</center><center>{{$mi->mail}}</center></div>
             </div>
         </div>
 @endforeach
