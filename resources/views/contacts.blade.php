@@ -34,8 +34,12 @@ Contacts
 
 @section('content')
 <br><br><br>
-<h3><center>NATIONAL INSTITUTE OF TECHNOLOGY : TIRUCHIRAPPALLI – 620015</center></h3>
-<h3><center><u>STUDENTS’ COUNCIL 2015-2016</u></center></h3>
+<div class="row">
+    <img class="col-xs-2 col-xs-offset-5 col-md-2 col-md-offset-3 col-lg-1 col-lg-offset-3" style="display:inline-block;vertical-align:middle;float:none;" src="{{asset('Student-council-logo.png')}}">
+    <div class="col-xs-8 col-xs-offset-2 col-md-5 col-md-offset-0" style="display:inline-block;vertical-align:middle;float:none;">
+        <center><h2>Students' Council 2015 - 16</h2></center>
+    </div>
+</div>
 <br>
 <p >The Student Association is the voice of the students in the campus and looks into all matters of 
 interest of the students. It is a medium of communication between the students and the management 
@@ -46,63 +50,76 @@ year girls, a General Secretary from third year and a Joint Secretary from secon
 elected by the students to represent them for a period of one year. They are responsible for 
 coordinating the various cultural and social activities conducted in the college.</p>
 <br>
-<div class="table-responsive">
-<table class="table table-striped">
-    <thead>
-      <tr>
-        <th>Post</th>
-        <th>Name</th>
-        <th>Roll No</th>
-        <th>Dept(Year)</th>
-        <th>Contact No</th>
-        <th>Hostel,Room No</th>
-        <th>Email-Id</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-        <td>PRESIDENT</td>
-        <td>RAJAT SANKLECHA</td>
-        <td>114112069</td>
-        <td>PROD(4)</td>
-        <td>9486001186</td>
-        <td>Garnet B,79</td>
-        <td>studentpresident@nitt.edu</td>
-      </tr>
-    </tbody>
-    <tbody>
-        <tr>
-        <td>VICE PRESIDENT</td>
-        <td>HEMAPRIYA.J</td>
-        <td>106112038</td>
-        <td>CSE(4)</td>
-        <td>9489066201</td>
-        <td>Opal A,95</td>
-        <td>studvp@nitt.edu</td>
-      </tr>
-    </tbody>
-    <tbody>
-        <tr>
-        <td>GENERAL SECRETARY</td>
-        <td>RAJESH KUMAR KARNENA</td>
-        <td>106113076</td>
-        <td>CSE(3)</td>
-        <td>9486001171</td>
-        <td>Zircon A,80</td>
-        <td>studentgensec@nitt.edu</td>
-      </tr>
-    </tbody>
-    <tbody>
-        <tr>
-        <td>JOINT SECRETARY</td>
-        <td>MANI PRAKASH.R</td>
-        <td>107114060</td>
-        <td>EEE(2)</td>
-        <td>9487537395</td>
-        <td>Amber B,102</td>
-        <td>107114060@nitt.edu</td>
-      </tr>
-    </tbody>
-  </table>
+<style type="text/css">
+    @media only screen and (min-width : 1200px) {
+        .for_margin
+        {
+            margin-left:11.11%;
+            margin-right:11.11%;
+        }
+
+    }
+</style>
+<div class="row">
+    <div class="col-xs-12 col-sm-6 col-lg-4  for_margin">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <center><h3 class="panel-title">President</h3></center>
+            </div>
+            <div class="panel-body">
+                <p><b>Name</b> : RAJAT SANKLECHA</p>
+                <p><b>Roll No</b> : 114112069</p>
+                <p><b>Dept. & Year</b> : PROD(4)</p>
+                <p><b>Contanct No.</b> : 9486001186</p>
+                <p><b>Room No. </b> : Garnet B,79</p>
+                <p><b>Email ID</b> : studentpresident@nitt.edu</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-lg-4">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <center><h3 class="panel-title">Vice President</h3></center>
+            </div>
+            <div class="panel-body">
+                <p><b>Name</b> : HEMAPRIYA.J</p>
+                <p><b>Roll No</b> : 106112038</p>
+                <p><b>Dept. & Year</b> : CSE(4)</p>
+                <p><b>Contact No.</b> : 9489066201</p>
+                <p><b>Room No. </b> : Opal A,95</p>
+                <p><b>Email ID</b> : studvp@nitt.edu</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-lg-4  for_margin">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <center><h3 class="panel-title">General Secretary</h3></center>
+            </div>
+            <div class="panel-body">
+                <p><b>Name</b> : RAJESH KUMAR KARNENA</p>
+                <p><b>Roll No</b> : 106113076</p>
+                <p><b>Dept. & Year</b> : CSE(3)</p>
+                <p><b>Contact No.</b> : 9486001171</p>
+                <p><b>Room No. </b> : Zircon A,80</p>
+                <p><b>Email ID</b> : studentgensec@nitt.edu</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-lg-4">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <center><h3 class="panel-title">Joint Secretary</h3></center>
+            </div>
+            <div class="panel-body">
+                <p><b>Name</b> : MANI PRAKASH.R</p>
+                <p><b>Roll No</b> : 107114060</p>
+                <p><b>Dept. & Year</b> : EEE(2)</p>
+                <p><b>Contact No.</b> : 9487537395</p>
+                <p><b>Room No. </b> : Amber B,102</p>
+                <p><b>Email ID</b> : 107114060@nitt.edu</p>
+            </div>
+        </div>
+    </div>
 </div>
 @stop
