@@ -65,11 +65,6 @@ border:1px solid #333333;
 #quicklinks::-webkit-scrollbar-thumb:active{
 background-color:#555555;
 border:1px solid #333333;
-} 
-#ex3::-webkit-scrollbar-track{
-border:1px #333333 solid;
-border-radius:10px;
--webkit-box-shadow:0 0 6px #333333 inset;
 }
 </style>
 </head>
@@ -107,7 +102,7 @@ border-radius:10px;
         </div><!--/.nav-collapse -->
       </div>
       <div class="collapse navbar-collapse navbar-ex1-collapse">
-                <ul class="nav navbar-nav side-nav">
+                <ul class="nav navbar-nav side-nav" id="quicklinks">
                     @yield('sidebar')                    
                 </ul>
 
