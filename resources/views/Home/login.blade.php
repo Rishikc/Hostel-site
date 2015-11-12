@@ -1,4 +1,9 @@
 @extends('base')
+
+@section('title')
+    Login
+@stop
+
 @section('topbar')
 <li >
     <a href={{ action('HomeController@index') }}> Home</a>

@@ -1,7 +1,7 @@
 @extends('base')
 
 @section('title')
-    Hostel Site
+    NITT HOSTELS
 @stop
 
 @section('topbar')
@@ -37,10 +37,12 @@
 @section('content')
 <br>
 <br>
+<div class="page-header">
 <center>
-<h2>Hostel Office</h2>
-
+<h1>Hostels Complaint Portal</h1>
+<h3>Hostels Office</h3>
 </center>
+</div>
 <div class="row">
 	<div class="panel panel-default col-sm-8 col-lg-offset-1">
 	  <div class="panel-body">Click <a href="complaints/make">here</a> to login and make a complaint</div>

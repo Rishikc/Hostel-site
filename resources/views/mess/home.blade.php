@@ -31,7 +31,7 @@
 
 <div class="row">
 <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-md-6">
-<img class="img-responsive" src="/Hostels/{{ $details->url_name }}.jpg" alt=""  >
+<img class="img-responsive" src="/Mess/{{ $details->url_name }}.jpg" alt=""  >
 </div>
 </div>
 <div class="row">

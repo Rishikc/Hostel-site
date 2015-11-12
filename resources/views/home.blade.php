@@ -1,7 +1,7 @@
 @extends('base')
 
 @section('title')
-    Hostel Site
+    NITT HOSTELS
 @stop
 
 @section('topbar')
