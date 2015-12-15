@@ -14,9 +14,6 @@
 
     <link href="{{asset('/css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{asset('/css/sb-admin.css')}}" rel="stylesheet">
-    
-    <!-- Custom Fonts -->
-    <link href="{{asset('/font-awesome/css/font-awesome.min.css')}}font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 <style>
 .navbar-brand,.navbar-nav li a{
     line-height: 80px;
