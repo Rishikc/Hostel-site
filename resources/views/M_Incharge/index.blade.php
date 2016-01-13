@@ -52,7 +52,7 @@
 					<td>{{$m->name}}</td>
 					<td>{{$m->mname}}</td>
 					<td>{{$m->position}}</td>
-					<td></td>
+					<td><a href="{{action('M_InchargeController@index').'/'.$m->id.'/edit'}}"><button class="btn btn-danger btn-xs">Edit</button></a></td>
 
 				</tr>
 				<?php $i++;?>

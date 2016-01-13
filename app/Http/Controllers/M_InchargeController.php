@@ -85,7 +85,9 @@ class M_InchargeController extends Controller
      */
     public function edit($id)
     {
-        //
+        $m_incharge = M_Incharge::findOrFail($id);
+        $messes = Mess::all();
+        return view('M_Incharge.edit',["m_incharge"=>$m_incharge,"messes"=>$messes]);
     }
 
     /**
@@ -94,9 +96,24 @@ class M_InchargeController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function update($id)
+    public function update($id,Request $request)
     {
-        //
+        $mi = M_Incharge::findOrFail($id);
+        $mi->name = $request->get('name');
+        $mi->mess_id = $request->get('mess_id');
+        $mi->position = $request->get("position");
+        $mi->mail = $request->get('mail');
+        if($request->file('image'))
+        {
+            //$request->file('image')->getClientOriginalExtension();
+            $destinationPath = base_path() . '/public/Mess Incharge/'; // upload path
+            $extension = $request->file('image')->getClientOriginalExtension(); // getting image extension
+            $fileName = $mi->image_url .'.'.$extension; // renameing image
+            $request->file('image')->move($destinationPath, $fileName); 
+        }
+
+        $mi->save();
+        return redirect('m_incharge/create')->with('message', 'Successfully Edited Mess Incharge!!');
     }
 
     /**

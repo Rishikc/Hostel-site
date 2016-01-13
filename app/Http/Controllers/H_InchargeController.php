@@ -97,7 +97,6 @@ class H_InchargeController extends Controller
      */
     public function update($id,Request $request)
     {
-       echo "update";
        echo $id;
        $hi = H_Incharge::findOrFail($id);
         $hi->name = $request->get('name');
