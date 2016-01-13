@@ -61,7 +61,14 @@
     <div class="col-xs-6 col-md-4">
             <div class="panel panel-default">
                 <div class="panel-body"><img class="img-responsive" src="/Hostel Incharge/{{ $hi->image_url }}.jpg" alt=""  ></div>
-                <div class="panel-footer clearfix"><center>{{ $hi->name }}</center><center>{{$hi->position}}</center><center>{{$hi->mail}}</center></div>
+                <div class="panel-footer clearfix">
+                    <center>{{ $hi->name }}</center>
+                    <center>{{$hi->position}}</center>
+                    <center>{{$hi->mail}}</center>
+                    @if(Session::has('user_name'))
+                        <a class="pull-right" href="{{action('H_InchargeController@index').'/'.$hi->id.'/edit'}}"><button class="btn btn-danger btn-xs">Edit</button></a>
+                    @endif
+                </div>
             </div>
         </div>
 @endforeach

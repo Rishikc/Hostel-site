@@ -18,7 +18,7 @@
 <li>
     <a href={{ action('HomeController@show') }}>Complaints</a>
 </li>
-<li class="active">
+<li>
     <a href={{ action('HomeController@contacts_info') }}>Contacts</a>
 </li>
 <li class="active">
