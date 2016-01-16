@@ -80,7 +80,7 @@
 
 
 @if (Session::has('user_name'))
-<a href={{ action('HostelController@hosteledit',array('hostel_name'=>$details->name)) }} ><button type="button" class="btn btn-danger">edit</button></a>
+<a href={{ action('HostelController@hosteledit',array('hostel_name'=>$details->url_name)) }} ><button type="button" class="btn btn-danger">edit</button></a>
 @endif
 
 @stop
