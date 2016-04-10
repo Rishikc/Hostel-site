@@ -104,7 +104,7 @@ class HomeController extends Controller
             $ldaparr = ldap_get_entries($ldapconn,$sr); 
 
             if($ldaparr['count']==0)
-                return redirect('/registration/nitt')->with("message","Not a Valid Roll Number");
+                return redirect('/complaints')->with("message","Not a Valid Roll Number");
             $name = $ldaparr[0]['displayname'][0];
             $building=$request->get('option');
             $rollnumber=Session('roll_number');
@@ -188,6 +188,11 @@ class HomeController extends Controller
     public function contacts_info()
     {
         return view('contacts');
+    }
+
+    public function administration()
+    {
+        return view('administration');
     }
 
 

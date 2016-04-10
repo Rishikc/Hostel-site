@@ -24,6 +24,7 @@ Route::post('/modify_complaint_status','HomeController@modify_complaint_status')
 */
 
 Route::get('contacts','HomeController@contacts_info');
+Route::get('administration','HomeController@administration');
 
 Route::group(['middleware' => 'userauth'], function() {
 	Route::get('complaints/make', 'HomeController@complaint');

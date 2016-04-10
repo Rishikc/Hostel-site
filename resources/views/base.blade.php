@@ -124,7 +124,7 @@ border:1px solid #333333;
     <!-- /#wrapper -->
     <footer class="footer">
             <br>
-            <center><p>Made with &hearts; by Delta Force</p></center>
+            <center><p>Made with <span style="color:red">&hearts;</span> by <a href="http://delta.nitt.edu">Delta Force</a></p></center>
     </footer>
     <!-- jQuery -->
     <script src="{{asset('/js/jquery.js')}}"></script>

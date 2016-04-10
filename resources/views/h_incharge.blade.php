@@ -21,6 +21,9 @@
 <li>
     <a href={{ action('HomeController@contacts_info') }}>Contacts</a>
 </li>
+<li>
+    <a href={{ action('HomeController@administration') }}>Administration</a>
+</li>
 <li class="active">
 <a href={{ action('H_InchargeController@index') }}>Hostels Incharge</a>
 </li>
