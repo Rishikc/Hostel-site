@@ -16,8 +16,8 @@ Route::get('/', 'HomeController@index');
 Route::get('login', 'HomeController@login');
 Route::get('logout', 'HomeController@logout');
 Route::post('auth', 'HomeController@auth');
-Route::post('get_complaint','HomeController@get_complaint');
-Route::post('/modify_complaint_status','HomeController@modify_complaint_status');
+
+
 /*Route::group(['middleware' => 'adminauth'], function () {
 //any pages oly visible by admin
 });
@@ -29,6 +29,8 @@ Route::get('administration','HomeController@administration');
 Route::group(['middleware' => 'userauth'], function() {
 	Route::get('complaints/make', 'HomeController@complaint');
 	Route::post('complaints/submit', 'HomeController@complaint_submit');
+	Route::get('complaints', 'HomeController@show');
+	Route::post('get_complaint','HomeController@get_complaint');
 });
 
 Route::group(['middleware' => 'adminauth'], function () {
@@ -45,6 +47,7 @@ Route::group(['middleware' => 'adminauth'], function () {
 	Route::post('/get_quicklink', 'HomeController@get_quicklink');
 	Route::post('/quicklink', 'HomeController@store_quicklink');
 	Route::get('complaints/{filter}', 'HomeController@show_filter');
+	Route::post('/modify_complaint_status','HomeController@modify_complaint_status');
 
 });
 
@@ -62,4 +65,4 @@ Route::get('mess/show', 'MessController@show');
 //Route::post('mess/feedback','MessController@store_feedback');
 Route::get('mess/{mess_name}', 'MessController@messhome');
 
-Route::get('complaints', 'HomeController@show');
+
