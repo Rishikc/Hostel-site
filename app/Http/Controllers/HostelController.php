@@ -64,6 +64,8 @@ class HostelController extends Controller
     public function hostelhome($hostel_name)
     {
         $hostel = Hostels::where('url_name', '=', $hostel_name)->first();
+        if(!$hostel)
+            return redirect()->action('HostelController@index');
         $hi = H_Incharge::where('hostel_id', '=', $hostel->id)->get();
         $hostels = Hostels::all();
         return view('Hostels.home', ['details' => $hostel, 'hostels' => $hostels, 'selected_hostel' => $hostel_name, 'incharge' => $hi]);

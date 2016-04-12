@@ -55,7 +55,7 @@ Route::group(['middleware' => 'adminauth'], function () {
 Route::get('hostels', 'HostelController@index');
 Route::get('hostels/show', 'HostelController@show');
 Route::get('hostels/{hostel_name}', 'HostelController@hostelhome');
-Route::get('hostels/{hostel_name}/gallery', 'HostelController@hostelgallery');
+//Route::get('hostels/{hostel_name}/gallery', 'HostelController@hostelgallery');
 
 
 Route::get('mess', 'MessController@index');
